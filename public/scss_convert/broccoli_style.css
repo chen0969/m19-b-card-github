@@ -2161,7 +2161,7 @@ section {
     align-content: center;
   }
   .l-header__navItems {
-    background-color: #4C2A70;
+    background-color: #FE9300;
     display: flex;
     flex-direction: row;
     padding: var(--spacing-24);
@@ -2258,7 +2258,7 @@ section {
     align-content: center;
   }
   .l-header-2__navItems {
-    background-color: #4C2A70;
+    background-color: #FE9300;
     display: flex;
     flex-direction: row;
     padding: var(--spacing-24);
@@ -2409,7 +2409,7 @@ section {
   z-index: 1;
 }
 .l-innerHeader__headerCard svg polygon {
-  fill: #4C2A70;
+  fill: #FE9300;
 }
 
 .l-innerbody__news {
@@ -2467,7 +2467,7 @@ section {
 }
 .l-join__content p {
   font-size: var(--text-2xl);
-  color: #4C2A70;
+  color: #FE9300;
   font-weight: 900;
   text-align: end;
 }
@@ -2544,7 +2544,7 @@ section {
 }
 .l-singleArticle__rightDiv h2 {
   font-size: var(--text-2xl);
-  color: #4C2A70;
+  color: #FE9300;
   font-weight: 800;
 }
 @media (max-width: 768px) {
@@ -2567,7 +2567,7 @@ section {
 }
 .l-singleArticle__moreMeta h3 {
   font-size: var(--text-md);
-  color: #4C2A70;
+  color: #FE9300;
 }
 .l-singleArticle__moreMeta p {
   font-size: var(--text-xs);
@@ -2576,7 +2576,7 @@ section {
 .l-singleArticle__title {
   font-size: var(--text-3xl);
   font-weight: 800;
-  color: #4C2A70;
+  color: #FE9300;
 }
 @media (min-width: 768px) {
   .l-singleArticle .c-articleCard div.container {
@@ -2616,7 +2616,7 @@ section {
 }
 @media (max-width: 768px) {
   .l-introduction__portriat, .l-introduction__schoolImg {
-    border: solid var(--spacing-2) #4C2A70;
+    border: solid var(--spacing-2) #FE9300;
     border-radius: var(--spacing-12);
   }
 }
@@ -2821,7 +2821,7 @@ section {
 }
 .l-contract__title {
   font-size: var(--text-4xl);
-  color: #4C2A70;
+  color: #FE9300;
 }
 
 .l-login {
@@ -2861,10 +2861,10 @@ section {
   font-size: var(--text-xl);
 }
 .l-qnaGuest__border {
-  border: solid var(--spacing-2) #4C2A70;
+  border: solid var(--spacing-2) #FE9300;
 }
 .l-qnaGuest__infoHeader {
-  background-color: #4C2A70;
+  background-color: #FE9300;
   text-align: center;
   color: var(--color-white);
   font-size: var(--text-2xl);
@@ -2902,7 +2902,7 @@ section {
 }
 .l-qnaGuest__seeMore {
   text-align: center;
-  background-color: #4C2A70;
+  background-color: #FE9300;
   border-radius: var(--spacing-12);
   color: var(--color-white);
   font-size: var(--text-2xl);
@@ -2916,7 +2916,7 @@ section {
 }
 .l-qnaGuest__join {
   text-align: center;
-  background-color: #4C2A70;
+  background-color: #FE9300;
   border-radius: var(--spacing-32);
   color: var(--color-white);
   font-size: var(--text-xl);
@@ -3018,7 +3018,7 @@ section {
 }
 
 .l-collectPost__sideBar {
-  background-color: #4C2A70;
+  background-color: #FE9300;
 }
 .l-collectPost__cards {
   background-color: var(--color-white);
@@ -3041,7 +3041,7 @@ section {
   }
 }
 .l-collectPost__deshSide {
-  background-color: #4C2A70;
+  background-color: #FE9300;
 }
 @media (max-width: 1024px) {
   .l-collectPost__deshSide {
@@ -3088,11 +3088,11 @@ section {
 .l-payList__card {
   border-radius: var(--spacing-24);
   font-weight: 900;
-  border: solid var(--spacing-2) #4C2A70;
+  border: solid var(--spacing-2) #FE9300;
   overflow: hidden;
 }
 .l-payList__header {
-  border-bottom: solid var(--spacing-4) #4C2A70;
+  border-bottom: solid var(--spacing-4) #FE9300;
 }
 .l-payList__btns .o-btn {
   font-size: var(--text-md);
@@ -3100,7 +3100,7 @@ section {
 }
 .l-payList__slogan {
   display: block;
-  color: #4C2A70;
+  color: #FE9300;
   font-size: var(--text-lg);
   border-radius: var(--spacing-24);
   background-color: var(--color-white);
@@ -3126,7 +3126,7 @@ section {
   }
 }
 .c-breadcrumbs__currentPage {
-  color: #4C2A70;
+  color: #FE9300;
   font-size: var(--text-4xl);
   letter-spacing: var(--spacing-4);
   font-weight: 600;
@@ -3148,7 +3148,7 @@ section {
 }
 .c-sideNav__locations, .c-sideNav__locationsMobile, .c-sideNav__topics {
   padding: var(--spacing-24);
-  background-color: #4C2A70;
+  background-color: #FE9300;
   border-radius: var(--spacing-12);
   margin: var(--spacing-24);
   text-align: center;
@@ -3211,7 +3211,7 @@ section {
   max-height: 40rem;
   aspect-ratio: 3/4;
   cursor: pointer;
-  border: solid var(--spacing-4) #4C2A70;
+  border: solid var(--spacing-4) #FE9300;
   border-radius: var(--spacing-24) var(--spacing-24) 0 0;
   padding: 0;
   aspect-ratio: 1/1.5;
@@ -3246,7 +3246,7 @@ section {
   background-size: cover;
   background-position: center;
   aspect-ratio: 1/1;
-  border: solid var(--spacing-2) #4C2A70;
+  border: solid var(--spacing-2) #FE9300;
   background-color: var(--color-white);
 }
 .c-studentCard_schoolImg span {
@@ -3260,7 +3260,7 @@ section {
 .c-studentCard_userName {
   grid-column: 1/9;
   grid-row: 1/5;
-  color: #4C2A70;
+  color: #FE9300;
   font-weight: 800;
   font-size: var(--text-lg);
   padding: var(--spacing-8);
@@ -3309,7 +3309,7 @@ section {
 .c-studentCard_postTag a {
   text-align: center;
   display: block;
-  background-color: #4C2A70;
+  background-color: #FE9300;
   border-radius: var(--spacing-4);
   color: var(--color-white);
   font-size: var(--text-sm);
@@ -3324,7 +3324,7 @@ section {
 @media (max-width: 1024px) {
   .c-studentCard {
     cursor: pointer;
-    border: solid var(--spacing-4) #4C2A70;
+    border: solid var(--spacing-4) #FE9300;
     border-radius: var(--spacing-24) var(--spacing-24) 0 0;
     padding: 0;
     aspect-ratio: 1/1.5;
@@ -3359,7 +3359,7 @@ section {
     background-size: cover;
     background-position: center;
     aspect-ratio: 1/1;
-    border: solid var(--spacing-2) #4C2A70;
+    border: solid var(--spacing-2) #FE9300;
     background-color: var(--color-white);
   }
   .c-studentCard_schoolImg span {
@@ -3373,7 +3373,7 @@ section {
   .c-studentCard_userName {
     grid-column: 1/9;
     grid-row: 1/5;
-    color: #4C2A70;
+    color: #FE9300;
     font-weight: 800;
     font-size: var(--text-sm);
     padding: var(--spacing-8);
@@ -3422,7 +3422,7 @@ section {
   .c-studentCard_postTag a {
     text-align: center;
     display: block;
-    background-color: #4C2A70;
+    background-color: #FE9300;
     border-radius: var(--spacing-4);
     color: var(--color-white);
     font-size: var(--text-sm);
@@ -3438,7 +3438,7 @@ section {
 @media (max-width: 768px) {
   .c-studentCard {
     cursor: pointer;
-    border: solid var(--spacing-8) #4C2A70;
+    border: solid var(--spacing-8) #FE9300;
     border-radius: var(--spacing-24) var(--spacing-24) 0 0;
     padding: 0;
     aspect-ratio: 1/1.5;
@@ -3473,7 +3473,7 @@ section {
     background-size: cover;
     background-position: center;
     aspect-ratio: 1/1;
-    border: solid var(--spacing-2) #4C2A70;
+    border: solid var(--spacing-2) #FE9300;
     background-color: var(--color-white);
   }
   .c-studentCard_schoolImg span {
@@ -3487,7 +3487,7 @@ section {
   .c-studentCard_userName {
     grid-column: 1/9;
     grid-row: 1/5;
-    color: #4C2A70;
+    color: #FE9300;
     font-weight: 800;
     font-size: var(--text-lg);
     padding: var(--spacing-8);
@@ -3536,7 +3536,7 @@ section {
   .c-studentCard_postTag a {
     text-align: center;
     display: block;
-    background-color: #4C2A70;
+    background-color: #FE9300;
     border-radius: var(--spacing-4);
     color: var(--color-white);
     font-size: var(--text-xs);
@@ -3556,7 +3556,7 @@ section {
 @media (max-width: 3000px) {
   .c-studentCardSwiper {
     cursor: pointer;
-    border: solid var(--spacing-8) #4C2A70;
+    border: solid var(--spacing-8) #FE9300;
     border-radius: var(--spacing-24) var(--spacing-24) 0 0;
     padding: 0;
     aspect-ratio: 1/1.5;
@@ -3591,7 +3591,7 @@ section {
     background-size: cover;
     background-position: center;
     aspect-ratio: 1/1;
-    border: solid var(--spacing-2) #4C2A70;
+    border: solid var(--spacing-2) #FE9300;
     background-color: var(--color-white);
   }
   .c-studentCardSwiper_schoolImg span {
@@ -3605,7 +3605,7 @@ section {
   .c-studentCardSwiper_userName {
     grid-column: 1/9;
     grid-row: 1/5;
-    color: #4C2A70;
+    color: #FE9300;
     font-weight: 800;
     font-size: var(--text-sm);
     padding: var(--spacing-8);
@@ -3654,7 +3654,7 @@ section {
   .c-studentCardSwiper_postTag a {
     text-align: center;
     display: block;
-    background-color: #4C2A70;
+    background-color: #FE9300;
     border-radius: var(--spacing-4);
     color: var(--color-white);
     font-size: var(--text-xs);
@@ -3670,7 +3670,7 @@ section {
 @media (max-width: 1500px) {
   .c-studentCardSwiper {
     cursor: pointer;
-    border: solid var(--spacing-8) #4C2A70;
+    border: solid var(--spacing-8) #FE9300;
     border-radius: var(--spacing-24) var(--spacing-24) 0 0;
     padding: 0;
     aspect-ratio: 1/1.5;
@@ -3705,7 +3705,7 @@ section {
     background-size: cover;
     background-position: center;
     aspect-ratio: 1/1;
-    border: solid var(--spacing-2) #4C2A70;
+    border: solid var(--spacing-2) #FE9300;
     background-color: var(--color-white);
   }
   .c-studentCardSwiper_schoolImg span {
@@ -3719,7 +3719,7 @@ section {
   .c-studentCardSwiper_userName {
     grid-column: 1/9;
     grid-row: 1/5;
-    color: #4C2A70;
+    color: #FE9300;
     font-weight: 800;
     font-size: var(--text-xl);
     padding: var(--spacing-8);
@@ -3768,7 +3768,7 @@ section {
   .c-studentCardSwiper_postTag a {
     text-align: center;
     display: block;
-    background-color: #4C2A70;
+    background-color: #FE9300;
     border-radius: var(--spacing-4);
     color: var(--color-white);
     font-size: var(--text-xs);
@@ -3784,7 +3784,7 @@ section {
 @media (max-width: 1024px) {
   .c-studentCardSwiper {
     cursor: pointer;
-    border: solid var(--spacing-4) #4C2A70;
+    border: solid var(--spacing-4) #FE9300;
     border-radius: var(--spacing-24) var(--spacing-24) 0 0;
     padding: 0;
     aspect-ratio: 1/1.5;
@@ -3819,7 +3819,7 @@ section {
     background-size: cover;
     background-position: center;
     aspect-ratio: 1/1;
-    border: solid var(--spacing-2) #4C2A70;
+    border: solid var(--spacing-2) #FE9300;
     background-color: var(--color-white);
   }
   .c-studentCardSwiper_schoolImg span {
@@ -3833,7 +3833,7 @@ section {
   .c-studentCardSwiper_userName {
     grid-column: 1/9;
     grid-row: 1/5;
-    color: #4C2A70;
+    color: #FE9300;
     font-weight: 800;
     font-size: var(--text-md);
     padding: var(--spacing-8);
@@ -3882,7 +3882,7 @@ section {
   .c-studentCardSwiper_postTag a {
     text-align: center;
     display: block;
-    background-color: #4C2A70;
+    background-color: #FE9300;
     border-radius: var(--spacing-4);
     color: var(--color-white);
     font-size: var(--text-sm);
@@ -3898,7 +3898,7 @@ section {
 @media (max-width: 768px) {
   .c-studentCardSwiper {
     cursor: pointer;
-    border: solid var(--spacing-8) #4C2A70;
+    border: solid var(--spacing-8) #FE9300;
     border-radius: var(--spacing-24) var(--spacing-24) 0 0;
     padding: 0;
     aspect-ratio: 1/1.5;
@@ -3933,7 +3933,7 @@ section {
     background-size: cover;
     background-position: center;
     aspect-ratio: 1/1;
-    border: solid var(--spacing-2) #4C2A70;
+    border: solid var(--spacing-2) #FE9300;
     background-color: var(--color-white);
   }
   .c-studentCardSwiper_schoolImg span {
@@ -3947,7 +3947,7 @@ section {
   .c-studentCardSwiper_userName {
     grid-column: 1/9;
     grid-row: 1/5;
-    color: #4C2A70;
+    color: #FE9300;
     font-weight: 800;
     font-size: var(--text-4xl);
     padding: var(--spacing-8);
@@ -3996,7 +3996,7 @@ section {
   .c-studentCardSwiper_postTag a {
     text-align: center;
     display: block;
-    background-color: #4C2A70;
+    background-color: #FE9300;
     border-radius: var(--spacing-4);
     color: var(--color-white);
     font-size: var(--text-md);
@@ -4012,7 +4012,7 @@ section {
 
 .c-uniCard {
   cursor: pointer;
-  border: solid var(--spacing-2) #4C2A70;
+  border: solid var(--spacing-2) #FE9300;
   border-radius: var(--spacing-24);
   background-color: var(--color-white);
   min-height: 32rem;
@@ -4090,7 +4090,7 @@ section {
   transition: 0.3s;
 }
 .c-qaCard__content:hover {
-  background-color: #4C2A70;
+  background-color: #FE9300;
 }
 @media (max-width: 768px) {
   .c-qaCard__content {
@@ -4119,7 +4119,7 @@ section {
   }
 }
 .c-qaCard:hover {
-  border: solid var(--spacing-4) #4C2A70;
+  border: solid var(--spacing-4) #FE9300;
 }
 
 .c-newsCard {
@@ -4250,7 +4250,7 @@ section {
   align-items: start;
 }
 .c-articleCard__title {
-  color: #4C2A70;
+  color: #FE9300;
   font-size: var(--text-2xl);
   font-weight: 700;
 }
@@ -4276,7 +4276,7 @@ section {
   display: block;
   width: 100%;
   text-align: end;
-  color: #4C2A70;
+  color: #FE9300;
   font-size: var(--text-sm);
 }
 @media (max-width: 768px) {
@@ -4299,7 +4299,7 @@ section {
   width: 100%;
   padding: var(--spacing-12);
   color: var(--color-white);
-  background-color: #4C2A70;
+  background-color: #FE9300;
   font-size: var(--text-xl);
   text-align: center;
 }
@@ -4339,7 +4339,7 @@ section {
 }
 
 .c-qnaCard {
-  border: solid var(--spacing-2) #4C2A70;
+  border: solid var(--spacing-2) #FE9300;
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -4377,7 +4377,7 @@ section {
   cursor: pointer;
   padding: var(--spacing-12);
   border-radius: var(--spacing-12);
-  background-color: #4C2A70;
+  background-color: #FE9300;
   font-weight: 900;
 }
 .o-btn:hover {
@@ -4392,7 +4392,7 @@ section {
   cursor: pointer;
   padding: var(--spacing-4);
   border-radius: var(--spacing-4);
-  background-color: #4C2A70;
+  background-color: #FE9300;
   font-weight: 900;
   align-content: center;
 }
@@ -4408,7 +4408,7 @@ section {
   cursor: pointer;
   padding: var(--spacing-12);
   border-radius: var(--spacing-12);
-  background-color: #4C2A70;
+  background-color: #FE9300;
   font-weight: 900;
 }
 .o-qnaBtn:hover {
@@ -4439,7 +4439,7 @@ section {
   padding: var(--spacing-8);
   margin: var(--spacing-24);
   font-size: var(--text-lg);
-  border: var(--spacing-2) solid #4C2A70;
+  border: var(--spacing-2) solid #FE9300;
   border-radius: var(--spacing-32);
   background-color: var(--color-white);
 }
@@ -4455,15 +4455,15 @@ section {
   cursor: pointer;
   font-size: var(--text-sm);
   text-align: center;
-  color: #4C2A70;
+  color: #FE9300;
   border-radius: var(--spacing-4);
-  border: solid var(--spacing-2) #4C2A70;
+  border: solid var(--spacing-2) #FE9300;
 }
 
 .o-tag {
   margin: var(--spacing-4);
   padding: var(--spacing-4);
-  background-color: #4C2A70;
+  background-color: #FE9300;
   font-size: var(--text-sm);
   border-radius: var(--spacing-8);
   color: var(--color-white);
@@ -4491,7 +4491,7 @@ section {
   padding: var(--spacing-12);
   text-align: end;
   font-size: var(--text-lg);
-  color: #4C2A70;
+  color: #FE9300;
   z-index: 5;
 }
 @media (max-width: 768px) {
@@ -4556,7 +4556,7 @@ section {
   font-weight: 800;
 }
 .o-faqTopic:hover {
-  background-color: #4C2A70;
+  background-color: #FE9300;
   color: var(--color-white);
 }
 .o-faqTopic:active {
@@ -4588,7 +4588,7 @@ section {
   width: var(--text-4xl);
 }
 .o-faqBtn span svg circle {
-  fill: #4C2A70;
+  fill: #FE9300;
 }
 .o-faqBtn span svg path {
   fill: #BD9EBE;
@@ -4627,7 +4627,7 @@ section {
 }
 .o-basicLink:hover {
   font-weight: 800;
-  color: #4C2A70;
+  color: #FE9300;
 }
 @media (max-width: 768px) {
   .o-basicLink {
@@ -4666,7 +4666,7 @@ section {
 }
 .o-searchBar svg {
   border-radius: var(--spacing-80);
-  background-color: #4C2A70;
+  background-color: #FE9300;
   aspect-ratio: 1/1;
   transform: translateX(var(--spacing-32));
   z-index: 2;
@@ -4678,7 +4678,7 @@ section {
 .o-searchBar__input {
   width: 100%;
   height: 100%;
-  border: solid var(--spacing-4) #4C2A70;
+  border: solid var(--spacing-4) #FE9300;
   border-radius: 0 var(--spacing-80) var(--spacing-80) 0;
 }
 @media (max-width: 768px) {
@@ -4697,7 +4697,7 @@ section {
 .o-welcomeTitle a {
   min-width: 25rem;
   text-align: end;
-  background-color: #4C2A70;
+  background-color: #FE9300;
   padding: var(--spacing-12);
   border-radius: 0 var(--spacing-24) var(--spacing-24) 0;
   font-size: var(--text-3xl);
@@ -4710,7 +4710,7 @@ section {
   .o-welcomeTitle a {
     width: 100%;
     text-align: center;
-    background-color: #4C2A70;
+    background-color: #FE9300;
     padding: var(--spacing-12);
     border-radius: var(--spacing-8);
     font-size: var(--text-2xl);
@@ -4722,7 +4722,7 @@ section {
   font-weight: 800;
   min-width: 25rem;
   text-align: end;
-  background-color: #4C2A70;
+  background-color: #FE9300;
   padding: var(--spacing-12);
   border-radius: 0 var(--spacing-24) var(--spacing-24) 0;
   font-size: var(--text-3xl);
@@ -4731,7 +4731,7 @@ section {
 
 .o-normalTitle {
   font-size: var(--text-3xl);
-  color: #4C2A70;
+  color: #FE9300;
 }
 
 .o-whiteTitle {
@@ -4746,11 +4746,11 @@ section {
 
 .o-articleTitle {
   font-size: var(--text-2xl);
-  color: #4C2A70;
+  color: #FE9300;
 }
 
 .o-loginTitle {
-  background-color: #4C2A70;
+  background-color: #FE9300;
   font-size: var(--text-3xl);
   color: var(--color-white);
   border-radius: var(--spacing-12);
@@ -4758,7 +4758,7 @@ section {
 }
 
 .o-sbadminTitle {
-  background-color: #4C2A70;
+  background-color: #FE9300;
   font-size: var(--text-lg);
   font-weight: 400;
   color: var(--color-white);
@@ -4768,7 +4768,7 @@ section {
 }
 
 .o-bulletBoard {
-  background-color: #4C2A70;
+  background-color: #FE9300;
 }
 
 .s-swiperCustom .swiper {
@@ -4783,7 +4783,7 @@ section {
 }
 .s-swiperCustom div.swiper-button-next::after, .s-swiperCustom div.swiper-button-prev::after {
   font-size: var(--text-2xl);
-  color: #4C2A70;
+  color: #FE9300;
   font-weight: 900;
 }
 .s-swiperCustom div.swiper.schoolSwiper .swiper-slide {
@@ -4799,7 +4799,7 @@ section {
   z-index: 99;
 }
 .s-swiperCustom span.swiper-pagination-bullet {
-  background-color: #4C2A70;
+  background-color: #FE9300;
   opacity: 1;
 }
 .s-swiperCustom span.swiper-pagination-bullet-active {
