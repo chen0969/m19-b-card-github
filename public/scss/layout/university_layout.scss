@@ -1,0 +1,12 @@
+.l-uniList{
+    &__content{
+        .c-uniCard h4{
+            font-size: var(--text-md);
+        }
+    }
+    @media (max-width:768px) {
+        .c-uniCard{
+            transform: scale(0.95);
+        }
+    }
+}

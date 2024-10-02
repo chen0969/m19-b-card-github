@@ -1,0 +1,10 @@
+.l-seniorPage{
+    .c-studentCard_userName{
+        padding: var(--spacing-4) var(--spacing-8);
+    }
+    @media (max-width:768px) {
+        .c-studentCard{
+            transform: scale(0.95);
+        }
+    }
+}

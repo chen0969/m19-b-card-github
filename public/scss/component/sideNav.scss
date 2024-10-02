@@ -1,0 +1,68 @@
+.c-sideNav {
+    &__selections {
+        position: relative;
+        color: var(--color-white);
+    }
+
+    &__locations,
+    &__locationsMobile,
+    &__topics {
+        padding: var(--spacing-24);
+        background-color: $prime_purple;
+        border-radius: var(--spacing-12);
+        margin: var(--spacing-24);
+        text-align: center;
+        font-size: var(--text-xl);
+        button {
+            padding: var(--spacing-8);
+            color: var(--color-white);
+        }
+        @media (max-width: 1024px) {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            font-size: var(--text-sm);
+        }
+    }
+
+    &__locations {
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &__locationsMobile {
+        @media (min-width: 1024px) {
+            display: none;
+        }
+    }
+
+    // popup section
+    &__area {
+        z-index: 2;
+        display: none;
+        width: 100%;
+        position: absolute;
+        @media (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    &__english, &__europ, &__asia {
+        display: none;
+        position: absolute;
+        width: 50%;
+        height: auto;
+    }
+
+    &__hr {
+        opacity: 1;
+        background-color: var(--color-white);
+        margin: var(--spacing-8) 0;
+        color: white;
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+}

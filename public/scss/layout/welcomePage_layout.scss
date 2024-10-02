@@ -1,0 +1,196 @@
+@keyframes change {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.l-innerHeader {
+    z-index: -1;
+    background-color: var(--color-black);
+    aspect-ratio: 16/8.5;
+    overflow: hidden;
+
+    &__headerCard {
+        display: grid;
+        grid-template-rows: repeat(12, auto);
+        grid-template-columns: repeat(12, auto);
+        overflow: hidden;
+
+        &__banner {
+            grid-row: 1/13;
+            grid-column: 1/13;
+
+            span {
+                display: block;
+                width: 100vw !important;
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: top;
+                aspect-ratio: 16/9;
+                // filter: opacity(0.6);
+            }
+        }
+
+        &__slogan {
+            grid-row: 7/9;
+            grid-column: 2/6;
+            text-align: left;
+            z-index: 2;
+
+            h1 {
+                font-size: 4vw;
+            }
+
+            #topic {
+                animation: change 1s forwards;
+            }
+        }
+
+        svg {
+            grid-row: 1/13;
+            grid-column: 1/13;
+            z-index: 1;
+
+            polygon {
+                fill: $prime_purple;
+            }
+        }
+    }
+}
+
+.l-innerbody{
+    // custom setting for main sections
+    &__news{
+        background-color: $prime_purple_bright;
+        padding: var(--spacing-80);
+        @media (max-width:768px) {
+            padding: var(--spacing-24);
+            .o-tag{
+                display: none;
+            }
+        }
+    }
+    &__local{
+        h6{
+            margin: 0 0 var(--spacing-24) var(--spacing-24);
+            padding-left: var(--spacing-4);
+            font-size: var(--text-xl);
+            font-weight: 800;
+            border-left: solid red var(--spacing-8);
+        }
+        div{
+            width: 100%;
+            padding: 0 var(--spacing-24) 0 var(--spacing-24);
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            p{
+                font-size: var(--text-md);
+                @media (max-width: 1024px){
+                    font-size: var(--text-sm);
+                }
+            }
+        }
+    }
+}
+
+.l-join{
+    padding: 0 var(--spacing-80) 0 var(--spacing-80);
+    @media (max-width:768px) {
+        padding: var(--spacing-12);
+    }
+    &__content{
+        display: flex;
+        flex-direction: column;
+        align-items: end;
+        justify-content: space-between;
+        height: 100%;
+        padding: var(--spacing-12);
+        gap: var(--spacing-12);
+        p{
+            font-size: var(--text-2xl);
+            color: $prime_purple;
+            font-weight: 900;
+            text-align: end;
+            @media (max-width: 1024px){
+                font-size: var(--text-xl);
+            }
+        }
+    }
+    &__img{
+        border-radius: var(--spacing-8);
+        @include imgBackground;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: end;
+        aspect-ratio: 16/9;
+    }
+}
+
+// .l-student{
+//     .c-studentCardSwiper{
+//         transform: scale(
+//             0.95
+//         );
+//     }
+//     .c-studentCardSwiper_userName{
+//         font-size: var(--text-2xl);
+//         @media (max-width: 768px){
+//             font-size: var(--text-4xl);
+//         }
+//         @media (max-width: 1024px){
+//             font-size: var(--text-xl);
+//         }
+//     }
+//     .c-studentCardSwiper_schoolEnglish{
+//         font-size: var(--text-lg);
+//         @media (max-width: 768px){
+//             font-size: var(--text-xl);
+//         }
+//         @media (max-width: 1024px){
+//             font-size: var(--text-lg);
+//         }
+//     }
+//     .c-studentCardSwiper_schoolChinese{
+//         font-size: var(--text-xl);
+//         @media (max-width: 768px){
+//             font-size: var(--text-2xl);
+//         }
+//         @media (max-width: 1024px){
+//             font-size: var(--text-sm);
+//         }
+//     }
+//     .c-studentCardSwiper_react{
+//         i span{
+//             font-size: var(--text-xl);
+//         }
+//     }
+//     .c-studentCardSwiper_postTag{
+//         padding: var(--spacing-4);
+//         a{
+//             font-size: var(--text-sm);
+//         }
+//     }
+// }
+
+.l-university{
+    background-color: $prime_purple_bright;
+        border-radius: var(--spacing-24);
+    .c-uniCard{
+        h4{
+            font-size: var(--text-lg);
+        }
+        h6{
+            font-size: var(--text-lg);
+        }
+    }
+}

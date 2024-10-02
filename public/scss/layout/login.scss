@@ -1,0 +1,22 @@
+.l-login{
+    background-color: $prime_gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__box{
+        background-color: var(--color-white);
+        border-radius: var(--spacing-32);
+        width: 50%;
+        @media (max-width:768px) {
+            width: 90%;
+        }
+    }
+    &__info{
+        font-size: var(--text-lg);
+    }
+    .o-btn{
+        font-size: var(--text-md);
+        width: 100%;
+        text-align: center;
+    }
+}

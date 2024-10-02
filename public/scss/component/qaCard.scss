@@ -1,0 +1,47 @@
+.c-qaCard{
+    height: 100%;
+    font-size: var(--text-md);
+    color: var(--color-white);
+    border: solid var(--spacing-4) $prime_purple_light;
+    border-radius: var(--spacing-32);
+    overflow: hidden;
+    transition: 0.2s;
+    &__content{
+        background-color: $prime_purple_light;
+        border-radius: var(--spacing-24);
+        padding: var(--spacing-12);
+        height: 100%;
+        min-height: 15rem;
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: space-around;
+        transition: 0.3s;
+        &:hover{
+            background-color: $prime_purple;
+        }
+        @media (max-width:768px) {
+            min-height: 8rem;
+            a.categQA, p{
+                display: none;
+            }
+        }
+    }
+    &__categName{
+        font-size: var(--text-2xl);
+        @media (max-width:768px) {
+            font-size: var(--text-3xl);
+            font-weight: 900;
+            letter-spacing: 0.5rem;
+        }
+    }
+    &__icon{
+        padding: var(--spacing-12);
+        @media (max-width:768px) {
+            display: none;
+        }
+    }
+    &:hover{
+        border: solid var(--spacing-4) $prime_purple;
+    }
+}

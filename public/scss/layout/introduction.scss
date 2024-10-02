@@ -1,0 +1,175 @@
+.l-introduction{
+    &__crumbs{
+        @media (max-width:768px) {
+            .c-breadcrumbs__currentPage{
+                font-size: var(--text-3xl);
+                width: 40%;
+                overflow-wrap: break-word;
+            }
+            background-color: $prime_purple_light;
+            border-radius: var(--spacing-12);
+            margin-left: var(--spacing-12);
+            h3{
+                color: var(--color-white);
+            }
+        }
+    }
+    &__userBasic{
+        @media (max-width:768px) {
+            margin-top: calc(-1 * var(--spacing-120));
+        }
+    }
+    &__portriat, &__schoolImg{
+        @include imgBackground;
+        @media (max-width:768px) {
+            border: solid var(--spacing-2) $prime_purple;
+            border-radius: var(--spacing-12);
+        }
+    }
+
+    &__briefInfo{
+        padding-left: var(--spacing-80);
+    }
+
+    &__infoCard{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        padding-top: var(--spacing-80);
+        @media (max-width:768px) {
+            padding: var(--spacing-2);
+        }
+    }
+    &__userName{
+        font-size: var(--text-3xl);
+        color: var(--color-white);
+        background-color: $prime_purple_light;
+        width: 100%;
+        margin-right: calc(-1*var(--spacing-64));
+        border-radius: var(--spacing-12) 0 0 var(--spacing-12);
+        padding: var(--spacing-8);
+        @media (max-width:768px) {
+            display: none;
+        }
+    }
+    &__tags{
+        border: solid 1px black;
+        width: 100%;
+        border-radius: var(--spacing-12) 0 0 var(--spacing-12);
+        padding: var(--spacing-24);
+        .o-skillBtn{
+            font-size: var(--text-md);
+        }
+        @media (max-width:768px) {
+            border-radius: var(--spacing-12);
+        }
+    }
+    &__schoolRelate{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100%;
+    }
+    &__schoolStatus{
+        background-color: $prime_purple_light;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--spacing-12);
+        .o-whiteBtn{
+            border-radius: var(--spacing-12);
+            padding: var(--spacing-4) var(--spacing-12) var(--spacing-4) var(--spacing-12);
+        }
+        @media (max-width:768px) {
+            padding: var(--spacing-8);
+        }
+    }
+    &__postTag{
+        padding: 0;
+        .o-tag{
+            font-size: var(--text-3xl);
+            margin-left: 0;
+            margin-right: var(--spacing-8);
+            @media (max-width:768px) {
+                font-size: var(--text-md);
+                padding: var(--spacing-2) var(--spacing-12);
+                margin: 0;
+            }
+        }
+        @media (max-width:768px) {
+            justify-content: space-between;
+        }
+    }
+
+    &__socialBtn{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: start;
+        div{
+            margin: 0 var(--spacing-12);
+        }
+        .bi-heart, .bi-bookmark, .bi-heart-fill, .bi-bookmark-fill{
+            padding: var(--spacing-2);
+        }
+        .o-actBtn, .o-tag, i{
+            font-size: var(--text-3xl);
+        }
+        .o-tag{
+            padding: var(--spacing-4) var(--spacing-24) var(--spacing-4) var(--spacing-24);
+        }
+        @media (max-width:768px) {
+            justify-content: space-between;
+        }
+    }
+
+    // detail section
+
+    &__detailSection{
+        background-color: $light_gray;
+        // padding: var(--spacing-80) var(--spacing-160) var(--spacing-80) var(--spacing-160);
+    }
+
+    &__detailContent{
+        background-color: var(--color-white);
+        border-radius: var(--spacing-32);
+        border: solid 1px var(--color-black);
+        padding: var(--spacing-32);
+        @media (max-width:768px) {
+            padding: var(--spacing-8);
+            border-radius: var(--spacing-8);
+        }
+    }
+
+    &__title{
+        width: 40%;
+        font-size: var(--text-3xl);
+        color: var(--color-white);
+        background-color: $prime_purple_light;
+        text-align: end;
+        padding: var(--spacing-12);
+        border-radius: 0 var(--spacing-12) var(--spacing-12) 0;
+        margin-top: calc(-1*var(--spacing-24));
+        margin-bottom: var(--spacing-32);
+        z-index: 2;
+    }
+
+    &__myArticle{
+        background-color: $light_gray;
+        border-radius: var(--spacing-24);
+        margin-top: calc(-1*var(--spacing-64));
+        .c-articleCard{
+            padding: var(--spacing-8);
+        }
+    }
+
+    &__articleCard{
+        background-color: var(--color-white);
+    }
+
+    &__reference{
+        margin-top: var(--spacing-32);
+    }
+}

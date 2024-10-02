@@ -1,0 +1,26 @@
+{
+    "i18n-ally.localesPaths": [
+        "resources/lang"
+    ],
+    "liveSassCompile.settings.compileOnWatch": false,
+    "liveSassCompile.settings.watchOnLaunch": true,
+    "liveSassCompile.settings.useNewCompiler": true,
+    "liveSassCompile.settings.showOutputWindowOn": "warning",
+    "liveSassCompile.settings.formats": [
+        {
+            "format": "expanded",
+            "extensionName": ".css",
+            "savePath": "~/../scss_convert"
+        }
+    ],
+    "liveSassCompile.settings.excludeList": [
+        "/**/node_modules/**",
+        "/.vscode/**",
+        "/public/sb-admin/**",
+        "/public/scss/component/**",
+        "/public/scss/layout/**",
+        "/public/scss/object/**",
+        "/public/scss/utility/**",
+        "/public/scss/state/**",
+    ]
+}
