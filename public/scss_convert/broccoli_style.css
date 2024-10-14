@@ -2099,7 +2099,7 @@ section {
   display: none;
 }
 .l-header__logo {
-  width: 20%;
+  width: 8%;
 }
 @media (max-width: 768px) {
   .l-header__logo {
@@ -2132,7 +2132,7 @@ section {
 }
 .l-header__li a:hover {
   font-weight: 900;
-  color: #BD9EBE !important;
+  color: #ffbc5e !important;
 }
 .l-header__li:last-child {
   padding: 0;
@@ -2196,7 +2196,7 @@ section {
   display: none;
 }
 .l-header-2__logo {
-  width: 20%;
+  width: 8%;
 }
 @media (max-width: 768px) {
   .l-header-2__logo {
@@ -2229,7 +2229,7 @@ section {
 }
 .l-header-2__li a:hover {
   font-weight: 900;
-  color: #BD9EBE !important;
+  color: #ffbc5e !important;
 }
 .l-header-2__li:last-child {
   padding: 0;
@@ -2413,7 +2413,7 @@ section {
 }
 
 .l-innerbody__news {
-  background-color: #e2d8e2;
+  background-color: #ffedd3;
   padding: var(--spacing-80);
 }
 @media (max-width: 768px) {
@@ -2492,7 +2492,7 @@ section {
 }
 
 .l-university {
-  background-color: #e2d8e2;
+  background-color: #ffedd3;
   border-radius: var(--spacing-24);
 }
 .l-university .c-uniCard h4 {
@@ -2589,7 +2589,7 @@ section {
 
 @media (max-width: 768px) {
   .l-introduction__crumbs {
-    background-color: #BD9EBE;
+    background-color: #ffbc5e;
     border-radius: var(--spacing-12);
     margin-left: var(--spacing-12);
   }
@@ -2639,7 +2639,7 @@ section {
 .l-introduction__userName {
   font-size: var(--text-3xl);
   color: var(--color-white);
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   width: 100%;
   margin-right: calc(-1 * var(--spacing-64));
   border-radius: var(--spacing-12) 0 0 var(--spacing-12);
@@ -2671,7 +2671,7 @@ section {
   height: 100%;
 }
 .l-introduction__schoolStatus {
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   justify-content: center;
   align-items: center;
   border-radius: var(--spacing-12);
@@ -2748,7 +2748,7 @@ section {
   width: 40%;
   font-size: var(--text-3xl);
   color: var(--color-white);
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   text-align: end;
   padding: var(--spacing-12);
   border-radius: 0 var(--spacing-12) var(--spacing-12) 0;
@@ -2772,7 +2772,7 @@ section {
 }
 
 .l-aboutUs__aboutSwiper {
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
 }
 .l-aboutUs__sponsor {
   background-color: var(--color-white);
@@ -2881,7 +2881,7 @@ section {
 .l-qnaGuest__name {
   text-align: center;
   height: 100%;
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   color: var(--color-white);
   font-size: var(--text-xl);
   margin-left: calc(-1 * var(--spacing-32));
@@ -2896,7 +2896,7 @@ section {
   }
 }
 .l-qnaGuest__callAction {
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   color: var(--color-white);
   border-radius: 0 0 var(--spacing-12) var(--spacing-12);
 }
@@ -2929,7 +2929,7 @@ section {
 }
 
 .l-articleList__authorCard {
-  border: solid var(--spacing-8) #BD9EBE;
+  border: solid var(--spacing-8) #ffbc5e;
   border-radius: var(--spacing-32);
   overflow: hidden;
 }
@@ -2941,7 +2941,7 @@ section {
 }
 .l-articleList__authorInfo {
   overflow: hidden;
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   border-radius: var(--spacing-24);
   margin-right: calc(-1 * var(--spacing-32));
 }
@@ -3228,7 +3228,7 @@ section {
   background-position: center;
   aspect-ratio: 1/1;
   margin: var(--spacing-8);
-  border: solid var(--spacing-2) #BD9EBE;
+  border: solid var(--spacing-2) #ffbc5e;
 }
 .c-studentCard_bg {
   grid-column: 1/13;
@@ -3236,7 +3236,7 @@ section {
   align-self: flex-end;
 }
 .c-studentCard_bg polygon {
-  fill: #BD9EBE;
+  fill: #ffbc5e;
 }
 .c-studentCard_schoolImg {
   grid-column: 2/5;
@@ -3341,7 +3341,7 @@ section {
     background-position: center;
     aspect-ratio: 1/1;
     margin: var(--spacing-8);
-    border: solid var(--spacing-2) #BD9EBE;
+    border: solid var(--spacing-2) #ffbc5e;
   }
   .c-studentCard_bg {
     grid-column: 1/13;
@@ -3349,7 +3349,7 @@ section {
     align-self: flex-end;
   }
   .c-studentCard_bg polygon {
-    fill: #BD9EBE;
+    fill: #ffbc5e;
   }
   .c-studentCard_schoolImg {
     grid-column: 2/5;
@@ -3455,7 +3455,7 @@ section {
     background-position: center;
     aspect-ratio: 1/1;
     margin: var(--spacing-8);
-    border: solid var(--spacing-4) #BD9EBE;
+    border: solid var(--spacing-4) #ffbc5e;
   }
   .c-studentCard_bg {
     grid-column: 1/13;
@@ -3463,7 +3463,7 @@ section {
     align-self: flex-end;
   }
   .c-studentCard_bg polygon {
-    fill: #BD9EBE;
+    fill: #ffbc5e;
   }
   .c-studentCard_schoolImg {
     grid-column: 2/5;
@@ -3573,7 +3573,7 @@ section {
     background-position: center;
     aspect-ratio: 1/1;
     margin: var(--spacing-8);
-    border: solid var(--spacing-4) #BD9EBE;
+    border: solid var(--spacing-4) #ffbc5e;
   }
   .c-studentCardSwiper_bg {
     grid-column: 1/13;
@@ -3581,7 +3581,7 @@ section {
     align-self: flex-end;
   }
   .c-studentCardSwiper_bg polygon {
-    fill: #BD9EBE;
+    fill: #ffbc5e;
   }
   .c-studentCardSwiper_schoolImg {
     grid-column: 2/5;
@@ -3687,7 +3687,7 @@ section {
     background-position: center;
     aspect-ratio: 1/1;
     margin: var(--spacing-8);
-    border: solid var(--spacing-4) #BD9EBE;
+    border: solid var(--spacing-4) #ffbc5e;
   }
   .c-studentCardSwiper_bg {
     grid-column: 1/13;
@@ -3695,7 +3695,7 @@ section {
     align-self: flex-end;
   }
   .c-studentCardSwiper_bg polygon {
-    fill: #BD9EBE;
+    fill: #ffbc5e;
   }
   .c-studentCardSwiper_schoolImg {
     grid-column: 2/5;
@@ -3801,7 +3801,7 @@ section {
     background-position: center;
     aspect-ratio: 1/1;
     margin: var(--spacing-8);
-    border: solid var(--spacing-2) #BD9EBE;
+    border: solid var(--spacing-2) #ffbc5e;
   }
   .c-studentCardSwiper_bg {
     grid-column: 1/13;
@@ -3809,7 +3809,7 @@ section {
     align-self: flex-end;
   }
   .c-studentCardSwiper_bg polygon {
-    fill: #BD9EBE;
+    fill: #ffbc5e;
   }
   .c-studentCardSwiper_schoolImg {
     grid-column: 2/5;
@@ -3915,7 +3915,7 @@ section {
     background-position: center;
     aspect-ratio: 1/1;
     margin: var(--spacing-8);
-    border: solid var(--spacing-4) #BD9EBE;
+    border: solid var(--spacing-4) #ffbc5e;
   }
   .c-studentCardSwiper_bg {
     grid-column: 1/13;
@@ -3923,7 +3923,7 @@ section {
     align-self: flex-end;
   }
   .c-studentCardSwiper_bg polygon {
-    fill: #BD9EBE;
+    fill: #ffbc5e;
   }
   .c-studentCardSwiper_schoolImg {
     grid-column: 2/5;
@@ -4046,7 +4046,7 @@ section {
 .c-uniCard h4 {
   color: var(--color-white);
   font-size: var(--text-xs);
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   padding: var(--spacing-16);
   width: 90%;
   min-height: 10rem;
@@ -4072,13 +4072,13 @@ section {
   height: 100%;
   font-size: var(--text-md);
   color: var(--color-white);
-  border: solid var(--spacing-4) #BD9EBE;
+  border: solid var(--spacing-4) #ffbc5e;
   border-radius: var(--spacing-32);
   overflow: hidden;
   transition: 0.2s;
 }
 .c-qaCard__content {
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   border-radius: var(--spacing-24);
   padding: var(--spacing-12);
   height: 100%;
@@ -4180,7 +4180,7 @@ section {
 }
 .c-articleCard div.container {
   overflow: hidden;
-  border: solid var(--spacing-2) #BD9EBE;
+  border: solid var(--spacing-2) #ffbc5e;
   border-radius: var(--spacing-32);
 }
 @media (max-width: 768px) {
@@ -4237,7 +4237,7 @@ section {
   display: block;
   cursor: pointer;
   color: white;
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   text-align: center;
   align-self: center;
   height: 100%;
@@ -4382,7 +4382,7 @@ section {
 }
 .o-btn:hover {
   color: var(--color-white);
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
 }
 
 .o-smallBtn {
@@ -4423,7 +4423,7 @@ section {
   padding: var(--spacing-12);
   border-radius: var(--spacing-12);
   border: solid var(--spacing-2) var(--color-white);
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   font-weight: 900;
   box-shadow: var(--spacing-4) var(--spacing-4) var(--spacing-4) gray;
 }
@@ -4561,7 +4561,7 @@ section {
 }
 .o-faqTopic:active {
   background-color: var(--color-white);
-  color: #BD9EBE;
+  color: #ffbc5e;
 }
 .o-faqTopic__selected {
   background-color: #C1C1C1;
@@ -4579,7 +4579,7 @@ section {
   width: 100%;
 }
 .o-faqBtn span {
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   border-radius: var(--spacing-4);
   border: solid var(--color-black) 1px;
 }
@@ -4591,7 +4591,7 @@ section {
   fill: #FE9300;
 }
 .o-faqBtn span svg path {
-  fill: #BD9EBE;
+  fill: #ffbc5e;
 }
 .o-faqBtn span p {
   font-size: var(--text-lg);
@@ -4617,7 +4617,7 @@ section {
   color: var(--color-white);
 }
 .o-collectPost_btn:hover {
-  color: #BD9EBE;
+  color: #ffbc5e;
 }
 
 .o-basicLink {
@@ -4689,7 +4689,7 @@ section {
 
 .o-input {
   caret-shape: block;
-  caret-color: #BD9EBE;
+  caret-color: #ffbc5e;
   letter-spacing: 0.2rem;
   font-size: var(--text-xl);
 }
@@ -4803,7 +4803,7 @@ section {
   opacity: 1;
 }
 .s-swiperCustom span.swiper-pagination-bullet-active {
-  background-color: #BD9EBE;
+  background-color: #ffbc5e;
   opacity: 1;
 }
 .s-swiperCustom .paginationCustom {

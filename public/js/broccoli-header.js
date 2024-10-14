@@ -88,13 +88,10 @@ $(document).ready(function() {
     const $window = $(window);
     const $lHeaderLiA = $(".l-header__li a");
     const $lHeader = $(".l-header");
-    const $logoImg = $("#logoImg");
-    const $logoImgPhone = $("#logoImgPhone");
     const $innerHeader = $(".l-innerHeader");
     const $studentHeader = $(".l-student");
 
     let currentTextColor = "";
-    let currentLogoSrc = "";
     let currentBgColor = "";
 
     function handleScroll() {
@@ -102,19 +99,13 @@ $(document).ready(function() {
         let isDesktop = $window.width() > 768;
         const bannerHeight = isDesktop ? $innerHeader.height() : $studentHeader.offset().top;
 
-        let logoImg = isDesktop ? $logoImg : $logoImgPhone;
         let textColor = screenRoll >= bannerHeight ? "#000000" : "#FFFFFF";
-        let logoSrc = screenRoll >= bannerHeight ? "uploads/images/color_ezl.png" : "uploads/images/logo.png";
         let bgColor = screenRoll >= bannerHeight ? "white" : "transparent";
 
         // 只在需要變更時執行 DOM 操作
         if (currentTextColor !== textColor) {
             $lHeaderLiA.css("color", textColor);
             currentTextColor = textColor;
-        }
-        if (currentLogoSrc !== logoSrc) {
-            logoImg.attr("src", logoSrc);
-            currentLogoSrc = logoSrc;
         }
         if (currentBgColor !== bgColor) {
             $lHeader.css("background-color", bgColor);
@@ -128,10 +119,8 @@ $(document).ready(function() {
 
 function bg_change() {
     let navbarState = $(".l-header__hamburger").attr('aria-expanded') === "true";
-    let logoSrc = navbarState ? "uploads/images/color_ezl.png" : "uploads/images/logo.png";
     let bgColor = navbarState ? "white" : "transparent";
 
-    $("#logoImgPhone").attr("src", logoSrc);
     $(".l-header").css("background-color", bgColor);
 }
 

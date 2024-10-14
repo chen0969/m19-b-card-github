@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="" />
-    <title>易子學</title>
+    <title>Senpai</title>
     <!-- Favicon-->
     <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}" />
     <!-- Bootstrap icons-->
@@ -27,15 +27,15 @@
 <!-- desk ver navbar-->
 <nav class="l-header l-header__hideOnDesk navbar navbar-expand-lg">
         <a class="l-header__logo" href="{{url('/')}}">
-            <img id="logoImg" src="{{asset('uploads/images/logo.png')}}" alt="logo">
+            <img id="logoImg" src="{{asset('uploads/images/senpai-color.png')}}" alt="logo">
         </a>
         <div class="l-header__navBar">
             <div class="l-header__navItems collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="l-header__li nav-item"><a class="nav-link scrollFunction"
-                            href="{{route('senior')}}">學長姐｜快找</a></li>
+                            href="{{route('senior')}}">大學伴｜快找</a></li>
                     <li class="l-header__li nav-item"><a class="nav-link scrollFunction"
-                            href="{{route('study-abroad')}}">留學誌｜推薦</a></li>
+                            href="{{route('study-abroad')}}">小學堂｜推薦</a></li>
                     @if(auth()->check())
                     <li class="l-header__li nav-item"><a class="nav-link scrollFunction"
                             href="{{route('home')}}">易子學系統</a></li>
@@ -75,19 +75,19 @@
         <div class="container p-3">
             <div class="row">
                 <!-- logo -->
-                <div class="col-5">
+                <div class="col-2">
                     <a href="{{url('/')}}">
-                        <img id="logoImgPhone" src="{{asset('uploads/images/logo.png')}}" alt="logo">
+                        <img id="logoImgPhone" src="{{asset('uploads/images/senpai-color.png')}}" alt="logo">
                     </a>
                 </div>
                 <!-- toggler -->
-                <div class="col-4 text-end align-content-center">
+                <div class="col-8 text-end align-content-end">
                     <button class="l-header__hamburger" type="button" data-bs-toggle="collapse" onclick="bg_change()"
                         data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation"><i class="bi bi-list"></i></button>
                 </div>
                 <!-- thumb nail -->
-                <div class="col-3">
+                <div class="col-2">
                     @if(auth()->check())
                     <a href="{{route('home')}}">
                         <svg class="l-header__thumbNail" viewbox="0 0 80 80">

@@ -31,7 +31,7 @@
         <div class="col-md-12 p-0 mt-5">
             <!-- title -->
             <h3 class="o-welcomeTitle mb-md-5">
-                <a href="{{route('senior')}}">學長姐 | 快找</a>
+                <a href="{{route('senior')}}">大學伴 | 快找</a>
             </h3>
             <div class="p-md-5">
                 <div class="l-student">
