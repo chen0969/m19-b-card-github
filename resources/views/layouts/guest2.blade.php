@@ -160,7 +160,7 @@
                     <!-- desk ver -->
                     <div class="l-footer__siteMap_desk">
                         <div class="l-footer__siteMap_desk_topic">
-                            <h6>加入｜易子學</h6>
+                            <h6>加入｜大學伴</h6>
                             <div>
                                 <a href="{{route('login')}}">登入｜註冊</a>
                                 <a href="https://lin.ee/RjpZvEC">聯絡我們</a>
@@ -169,16 +169,16 @@
                         <div class="l-footer__siteMap_desk_topic">
                             <h6>關於｜會員</h6>
                             <div>
-                                <a href="{{route('senior')}}">找學長姐</a>
-                                <a href="{{route('university-list')}}">找學校</a>
+                                <a href="{{route('senior')}}">找大學伴</a>
+                                <a href="{{route('university-list')}}">找工作</a>
                                 <a href="{{route('qna')}}">問與答</a>
-                                <a href="{{route('study-abroad')}}">留學誌</a>
+                                <a href="{{route('study-abroad')}}">小學堂</a>
                             </div>
                         </div>
                         <div class="l-footer__siteMap_desk_topic">
                             <h6>關於｜學長姐</h6>
                             <div>
-                                <a href="{{route('pay-product-list')}}">成為學長姐</a>
+                                <a href="{{route('pay-product-list')}}">成為大學伴</a>
                                 <!-- please replace with the real back-end code -->
                                 <a href="/yizixue-faq">教戰守則</a>
                                 <a href="/subscription-agreement">付費訂閱條款</a>
@@ -187,11 +187,11 @@
                             </div>
                         </div>
                         <div class="l-footer__siteMap_desk_topic">
-                            <h6>關於｜易子學</h6>
+                            <h6>關於｜大學伴</h6>
                             <div>
                                 <!-- please replace with the real back-end code -->
                                 <a href="/about-us">關於我們</a>
-                                <a href="">前輩網</a>
+                                <a href="">易子學</a>
                                 <!-- please replace with the real back-end code -->
                                 <a href="/service-agreement">服務條款</a>
                                 <!-- 會員規約 -->
