@@ -6,7 +6,7 @@
 
             <div class="row justify-content-md-center">
                 <div style="margin-bottom: 10px;" class="col-xl-10 col-lg-7">
-                    <div style="background: #4C2A70; padding:5px" class="card text-white shadow">
+                    <div class="card text-white shadow o-sbadminTitle">
                         <h2 style="margin: 0;" class="text-center">新增問題</h2>
                     </div>
                 </div>
@@ -22,7 +22,7 @@
                             <form method="POST" action="{{ route('save-qa') }}" enctype="multipart/form-data">
                                 {{ csrf_field() }}
                                 <div class="mb-3">
-                                    <label for="title" class="form-label">QA問題</label>
+                                    <label for="title" class="form-label u-prime-text">QA問題</label>
                                     @if($errors->has('title'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -37,7 +37,7 @@
                                         readonly>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="nickname" class="form-label">使用別稱</label>
+                                    <label for="nickname" class="form-label u-prime-text">使用別稱</label>
                                     @if($errors->has('nickname'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -47,7 +47,7 @@
                                     <input type="text" name="nickname" class="form-control o-input" value="{{old('nickname')}}" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="email" class="form-label">Email</label>
+                                    <label for="email" class="form-label u-prime-text">Email</label>
                                     @if($errors->has('email'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -57,7 +57,7 @@
                                     <input type="text" name="email" class="form-control o-input" value="{{old('email')}}" required>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="phone" class="form-label">聯絡電話</label>
+                                    <label for="phone" class="form-label u-prime-text">聯絡電話</label>
                                     @if($errors->has('phone'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -67,7 +67,7 @@
                                     <input type="text" name="phone" class="form-control o-input" value="{{old('phone')}}">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="line" class="form-label">Line</label>
+                                    <label for="line" class="form-label u-prime-text">Line</label>
                                     @if($errors->has('line'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -77,7 +77,7 @@
                                     <input type="text" name="line" class="form-control o-input" value="{{old('line')}}">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="contact_time" class="form-label">聯絡時間（台灣時間 GMT+8）</label>
+                                    <label for="contact_time" class="form-label u-prime-text">聯絡時間（台灣時間 GMT+8）</label>
                                     <div class="row">
                                         <div class="col-5">
                                             @if($errors->has('contact_time'))
@@ -103,7 +103,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="contact_time" class="form-label">金額</label>
+                                    <label for="contact_time" class="form-label u-prime-text">金額</label>
                                     <div class="row">
                                         <div class="col-5">
                                             @if($errors->has('amount_down'))
@@ -129,7 +129,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="place" class="form-label">地點</label>
+                                    <label for="place" class="form-label u-prime-text">地點</label>
                                     @if($errors->has('place'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -139,7 +139,7 @@
                                     <input type="text" name="place" class="form-control o-input" value="{{old('place')}}">
                                 </div>
                                 <div class="mb-3">
-                                    <label for="category" class="form-label">問題類別</label>
+                                    <label for="category" class="form-label u-prime-text">問題類別</label>
                                     @if($errors->has('category'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -186,7 +186,7 @@
                                     </style>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="avatar" class="form-label">說明</label>
+                                    <label for="avatar" class="form-label u-prime-text">說明</label>
                                     @if($errors->has('qabody'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -196,7 +196,7 @@
                                     <textarea id="article-ckeditor" class="form-control" rows="30" name="qabody">{{old('qabody')}}</textarea>
                                 </div>
                                 <div class="mb-3">
-                                    <label for="avatar" class="form-label">參考文件</label>
+                                    <label for="avatar" class="form-label u-prime-text">參考文件</label>
                                     @if($errors->has('attachments'))
                                         <div class="alert alert-danger alert-dismissible text-center">
                                             <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -207,7 +207,7 @@
                                     <input type="file" id="imgInp" name="attachments[]" class="form-control mb-2">
                                     <input type="file" id="imgInp" name="attachments[]" class="form-control mb-2">
                                 </div>
-                                <button type="submit" class="btn btn-primary">送出</button>
+                                <button type="submit" class="btn o-smallBtn">送出</button>
                             </form>
                         </div>
                     </div>

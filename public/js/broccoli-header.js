@@ -1,44 +1,44 @@
-let text = ["海外留學", "升學考試", "國際學校", "選課輔導", "校園導覽", "社團生活", "工作實習", "職涯創業"];
+let text = ['職涯最前線', '工作有問題', '想要問前輩'];
 let images = [
-    "uploads/images/banner_p1.jpg",
-    "uploads/images/banner_p2.jpg",
-    "uploads/images/banner_p3.jpg",
-    "uploads/images/banner_p4.jpg",
-    "uploads/images/banner_p5.jpg",
-    "uploads/images/banner_p6.jpg",
-    "uploads/images/banner_p7.jpg",
-    "uploads/images/banner_p8.jpg",
+    "images/senpai_banner_default/senpai_banner_default_1.jpg",
+    "images/senpai_banner_default/senpai_banner_default_2.jpg",
+    "images/senpai_banner_default/senpai_banner_default_3.jpg"
 ];
 let backendImages = [];
 let description1 = [];
 let description2 = [];
 
-$.ajax({
-    url: 'carousel-list',
-    method: 'get',
-    success: function(res){
-        $.each(res, function(key, item){
+// 使用 fetch 進行 AJAX 請求
+fetch('carousel-list')
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok ' + response.statusText);
+        }
+        return response.json();
+    })
+    .then(data => {
+        data.forEach(item => {
             backendImages.push(item.image_path);
             description1.push(item.description1);
             description2.push(item.description2);
         });
         totalPics = backendImages.length || images.length; // 若無後端圖片，則使用預設圖片數量
-    },
-    error: function(error){
-        console.log(error); // 提供錯誤信息
-    }
-});
+        headerSlide(); // 開始自動切換圖片
+    })
+    .catch(error => {
+        console.error('Fetch error:', error); // 提供錯誤信息
+    });
 
 let currentPic = 1;
 let totalPics = images.length; // 預設圖片數量
 let intervalId = setInterval(headerSlide, 2000); // 每隔2秒呼叫一次headerSlide
 
-function headerSlide(){
+function headerSlide() {
     currentPic = (currentPic < totalPics) ? currentPic + 1 : 1; // 切換到下一張圖片
     changePic(currentPic); // 根據 currentPic 切換圖片
 }
 
-function changePic(index){
+function changePic(index) {
     let image_path = backendImages[index - 1] || images[index - 1]; // 使用後端或預設圖片
     if (backendImages.length !== 0) {
         $('.description1').text(description1[index - 1]);
@@ -61,8 +61,7 @@ $('.pic-trigger').on('click', function() {
     setPic(index);
 });
 
-
-// header background function
+// 節流函數 throttle
 function throttle(func, limit) {
     let lastFunc;
     let lastRan;
@@ -84,6 +83,8 @@ function throttle(func, limit) {
     };
 }
 
+
+// header scrollfunction
 $(document).ready(function() {
     const $window = $(window);
     const $lHeaderLiA = $(".l-header__li a");
@@ -128,53 +129,3 @@ function bg_change() {
 
 
 
-setInterval(newsSlide, 2000); // 每隔2秒呼叫一次newsSlide
-
-
-let currentNews = 1;
-const totalNews = 5; // 定義總共的圖片數量
-let timeout2; // 定義 timeout2
-
-let posts;
-$.ajax({
-    url: 'api/post-random',
-    method: 'get',
-    success: function(res){
-        posts=res;
-    },
-    error: function(err){
-
-    }
-});
-function newsSlide(){
-    // 清除之前的 setTimeout
-    clearTimeout(timeout2);
-
-    // 切換到下一張圖片
-    if (currentNews < totalNews) {
-        currentNews++;
-    } else {
-        currentNews = 1;
-    }
-    if(posts[currentNews-1] !== undefined){
-        // 根據 currentPic 切換標題
-        $("#newsTopic").text(posts[currentNews-1].topic);
-        $("#newsTopic").attr('href', posts[currentNews-1].url);
-        // 根據 currentPic 切換圖片
-        $(".c-newsCard__bgImg").css("background-image", "url(" + posts[currentNews - 1].image_path + ")");
-        let string = posts[currentNews-1].category.map(function(item){return `<p class="o-tag">`+item+`</p>`});
-        $(".c-newsCard__tags").html(string);
-        $(".c-newsCard__meta").text(posts[currentNews-1].title);
-        $(".c-newsCard__brief").text(encodeHTML(posts[currentNews-1].body));
-        $(".c-newsCard__readMore").attr('href', posts[currentNews-1].url);
-        $(".c-newsCard__meta").attr('href', posts[currentNews-1].url);
-        $(".c-newsCard__brief").attr('href', posts[currentNews-1].url);
-    }
-}
-
-function encodeHTML(dirtyString) {
-    var container = document.createElement('div');
-    var text = document.createTextNode(dirtyString);
-    container.appendChild(text);
-    return container.innerHTML; // innerHTML will be a xss safe string
-}

@@ -188,8 +188,8 @@
                                             聯絡電話
                                         </p>
                                         <svg class="l-qnaGuest__infoContact" viewBox="0 0 675 126">
-                                            <rect x="45" width="630" height="126" rx="20" ry="20" fill="#BD9EBE" />
-                                            <path d="M60.5,18.5c0,0-41,8-60-19c0,0,11,47.2,60,47.2" fill="#BD9EBE" />
+                                            <rect x="45" width="630" height="126" rx="20" ry="20" fill="#ffbc5e" />
+                                            <path d="M60.5,18.5c0,0-41,8-60-19c0,0,11,47.2,60,47.2" fill="#ffbc5e" />
                                             @if(auth()->guest() || !auth()->user()->isVip())
                                             <text x="30%" y="60%"
                                                 fill="#ffffff">{{mb_substr($qna->phone, 0,1)}}*************</text>
@@ -203,8 +203,8 @@
                                             Email
                                         </p>
                                         <svg class="l-qnaGuest__infoContact" viewBox="0 0 675 126">
-                                            <rect x="45" width="630" height="126" rx="20" ry="20" fill="#BD9EBE" />
-                                            <path d="M60.5,18.5c0,0-41,8-60-19c0,0,11,47.2,60,47.2" fill="#BD9EBE" />
+                                            <rect x="45" width="630" height="126" rx="20" ry="20" fill="#ffbc5e" />
+                                            <path d="M60.5,18.5c0,0-41,8-60-19c0,0,11,47.2,60,47.2" fill="#ffbc5e" />
                                             @if(auth()->guest() || !auth()->user()->isVip())
                                             @if(filter_var($qna->email, FILTER_VALIDATE_EMAIL))
                                             <text x="30%" y="60%" fill="#ffffff">{{mb_substr($qna->email,0,1)}} ******@
@@ -223,8 +223,8 @@
                                             Line
                                         </p>
                                         <svg class="l-qnaGuest__infoContact" viewBox="0 0 675 126">
-                                            <rect x="45" width="630" height="126" rx="20" ry="20" fill="#BD9EBE" />
-                                            <path d="M60.5,18.5c0,0-41,8-60-19c0,0,11,47.2,60,47.2" fill="#BD9EBE" />
+                                            <rect x="45" width="630" height="126" rx="20" ry="20" fill="#ffbc5e" />
+                                            <path d="M60.5,18.5c0,0-41,8-60-19c0,0,11,47.2,60,47.2" fill="#ffbc5e" />
                                             @if(auth()->guest() || !auth()->user()->isVip())
                                             <text x="30%" y="60%"
                                                 fill="#ffffff">{{mb_substr($qna->line, 0, 1)}}*************</text>
@@ -321,7 +321,7 @@
                         </div>
                         <div class="col-2 col-md-1">
                             <svg viewBox="0 0 45 150">
-                                <polygon fill="#4C2A70" points="50,150 0,150 35,75 0,0 50,0 " />
+                                <polygon class="u-primeColor" points="50,150 0,150 35,75 0,0 50,0 " />
                             </svg>
                         </div>
                     </div>

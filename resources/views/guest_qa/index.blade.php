@@ -123,7 +123,7 @@
                         <!-- svg -->
                         <div class="col-2 col-md-1 p-0">
                             <svg viewBox="0 0 45 150">
-                                <polygon fill="#4C2A70" points="50,150 0,150 35,75 0,0 50,0 " />
+                                <polygon class="u-primeColor" points="50,150 0,150 35,75 0,0 50,0 " />
                             </svg>
                         </div>
                     </div>

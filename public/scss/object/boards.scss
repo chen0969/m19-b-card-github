@@ -1,3 +1,18 @@
-.o-bulletBoard{
+.o-bulletBoard {
     background-color: $prime_purple;
+}
+
+.o-subadmin {
+    &__card {
+        border-right: var(--spacing-80) solid $prime_purple;
+    }
+
+    ;
+}
+
+.o-img-border {
+    border: 2px solid $prime_purple;
+    padding: 10px;
+    border-radius: 5px;
+    width: 100%;
 }

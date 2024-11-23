@@ -29,7 +29,7 @@
     select.form-control {
         background: transparent;
         border: none;
-        border-bottom: 1px solid #4C2A70;
+        border-bottom: 1px solid #FE9300;
         -webkit-box-shadow: none;
         box-shadow: none;
         border-radius: 0;
@@ -46,7 +46,6 @@
         background-image: url('');
         background-size: cover;
         background-position: center;
-        border: 1px solid #bbb;
     }
 </style>
 

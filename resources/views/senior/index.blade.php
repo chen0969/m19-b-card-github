@@ -19,65 +19,6 @@
     <div class="row">
         <!-- side bar -->
         <div class="c-sideNav__selections col-lg-3 pr-lg-5">
-                <!-- desk btns -->
-                <div>
-                    <div class="c-sideNav__locations">
-                        <button id="englishBtn" onclick="SideBarSelect(1)">英語系國家</button>
-                        <hr class="c-sideNav__hr">
-                        <button id="europBtn" onclick="SideBarSelect(2)">歐語系國家</button>
-                        <hr class="c-sideNav__hr">
-                        <button id="asiaBtn" onclick="SideBarSelect(3)">亞洲國家</button>
-                    </div>
-                </div>
-                <!-- mobile btns -->
-                <div>
-                    <div class="c-sideNav__locationsMobile">
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#englishMobile"
-                            aria-expanded="false" aria-controls="#englishMobile">英語系國家</button>
-                        <hr>
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#europMobile"
-                            aria-expanded="false" aria-controls="#europMobile">歐語系國家</button>
-                        <hr>
-                        <button type="button" data-bs-toggle="collapse" data-bs-target="#asiaMobile"
-                            aria-expanded="false" aria-controls="#asiahMobile">亞洲國家</button>
-                    </div>
-                </div>
-                <!-- popups mobile ver-->
-                <div>
-                    <div class="l-uniList__popup collapse multi-collapse container" id="englishMobile">
-                        <div class="row">
-                            <a class="o-basicLink col-4" href="{{route('senior', ['area'=>'NORTHEAST'])}}">美國東北部</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['area'=>'WEST'])}}">美國西部</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['area'=>'MIDWEST'])}}">美國中西部</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['area'=>'SOUTH'])}}">美國南部</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'CANADA'])}}">加拿大</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'UK'])}}">英國</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'AUSTRALIA'])}}">澳洲</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'NEW ZEALAND'])}}">紐西蘭</a>
-                        </div>
-                    </div>
-                    <div class="l-uniList__popup collapse multi-collapse container" id="europMobile">
-                        <div class="row">
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'FRANCE'])}}">法國</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'GERMANY'])}}">德國</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'EUROPE'])}}">其他歐洲</a>
-                        </div>
-                    </div>
-                    <div class="l-uniList__popup collapse multi-collapse container" id="asiaMobile">
-                        <div class="row">
-                            <a class="o-basicLink col-4" href="{{route('senior', ['area'=>'INTERNATIONAL'])}}">台灣｜國際學校</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['area'=>'HIGHSCHOOL'])}}">台灣｜高中</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['area'=>'COLLEGE'])}}">台灣｜大學</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'SINGAPORE'])}}">新加坡</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'JAPAN'])}}">日本</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'KOREA'])}}">韓國</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'CHINA'])}}">中國</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'HONG KONG'])}}">香港</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'MACAU'])}}">澳門</a>
-                            <a class="o-basicLink col-4" href="{{route('senior', ['country'=>'ASIA'])}}">其他亞洲</a>
-                        </div>
-                    </div>
-                </div>
                 <!-- topic -->
                 <div>
                     <div class="c-sideNav__topics row">

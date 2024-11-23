@@ -30,18 +30,18 @@
     <!-- desk ver navbar-->
     <nav class="l-header-2 l-header-2__hideOnDesk navbar navbar-expand-lg">
         <a class="l-header-2__logo" href="{{url('/')}}">
-            <img id="logoImg" src="{{asset('uploads/images/logo.png')}}" alt="logo">
+            <img id="logoImg" src="{{asset('uploads/images/senpai-color.png')}}" alt="logo">
         </a>
         <div class="l-header-2__navBar">
             <div class="l-header-2__navItems collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="l-header-2__li nav-item"><a class="nav-link scrollFunction"
-                            href="{{route('senior')}}">學長姐｜快找</a></li>
+                            href="{{route('senior')}}">大學伴｜快找</a></li>
                     <li class="l-header-2__li nav-item"><a class="nav-link scrollFunction"
-                            href="{{route('study-abroad')}}">留學誌｜推薦</a></li>
+                            href="{{route('study-abroad')}}">小學堂｜推薦</a></li>
                     @if(auth()->check())
                     <li class="l-header-2__li nav-item"><a class="nav-link scrollFunction"
-                            href="{{route('home')}}">易子學系統</a></li>
+                            href="{{route('home')}}">大學伴系統</a></li>
                     <li class="l-header-2__li nav-item">
                         <a href="{{route('home')}}">
                             <svg class="l-header-2__thumbNail" viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -145,7 +145,7 @@
                 <!-- logo -->
                 <div class="col-12 col-md-6 col-lg-4 mx-auto">
                     <div class="l-footer__brand h-100">
-                        <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
+                        <img src="{{asset('uploads/images/hang-jia-logo-white.png')}}" alt="footer logo">
                         <div class="row g-3">
                             <p class="col-md-12 text-center">
                                 行家在線有限公司 | 統一編號 83453577 | all rights reserved<br>

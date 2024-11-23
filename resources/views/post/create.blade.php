@@ -11,15 +11,6 @@
         color: #fff;
     }
 
-    #checkbox .button {
-        display: inline-block;
-        margin: 0 5px 10px 0;
-        padding: 5px 10px;
-        background: #BD9EBE;
-        color: #ffffff;
-        cursor: pointer;
-    }
-
     #checkbox .button:hover {
         background: #bbb;
         color: #fff;
@@ -41,8 +32,8 @@
 
         <div class="row justify-content-md-center">
             <div style="margin-bottom: 10px;" class="col-xl-10 col-lg-7">
-                <div style="background: #4C2A70; padding:5px" class="card text-white shadow">
-                    <h2 style="margin: 0;" class="text-center">添加文章</h2>
+                <div class="card text-white shadow o-sbadminTitle">
+                    <h2 class="text-center">添加文章</h2>
                 </div>
             </div>
 
@@ -53,7 +44,7 @@
                         <form method="POST" action="{{ route('save-post') }}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="mb-3">
-                                <label for="title" class="form-label" style="color:#4C2A70;">文章標題</label>
+                                <label for="title" class="form-label u-prime-text">文章標題</label>
                                 <input type="text" name="title" class="form-control o-input" placeholder="輸入文章標題"
                                     value="{{old('title')}}">
                             </div>
@@ -68,11 +59,10 @@
                                 <input type="text" value="{{ $Data['authId'] }}" name="author"
                                     class="form-control o-input" readonly>
                             </div>
-                            <div id='upload-img-div' class="mb-3" style="border: 2px solid #4C2A70;
-                                padding: 10px; border-radius: 5px; width:100%;">
+                            <div id='upload-img-div' class="mb-3 o-img-border">
                                 <input type="file" id="imgInp" name="image_path" class="form-control o-input"
                                     style="display:none" value="{{old('image_path')}}">
-                                <a type="button" id="OpenImgUpload" class="o-articlePhoto">點擊添加圖片</a>
+                                <a type="button" id="OpenImgUpload" class="o-articlePhoto u-prime-text">點擊添加圖片</a>
                             </div>
                             @if($errors->has('image_path'))
                             <div class="alert alert-danger alert-dismissible text-center">
@@ -81,14 +71,14 @@
                             </div>
                             @endif
                             <div class="mb-3">
-                                <label for="category" class="form-label" style="color:#4C2A70;">選擇主題</label>
+                                <label for="category" class="form-label u-prime-text">選擇主題</label>
                                 @if($errors->has('category'))
                                 <div class="alert alert-danger alert-dismissible text-center">
                                     <button class="close" data-dismiss="alert" aria-hidden="true">x</button>
                                     {{$errors->first('category')}}
                                 </div>
                                 @endif
-                                <div id="checkbox" class="o-topicBox row">
+                                <div id="checkbox" class="o-topicBox row o-img-border">
                                     @foreach ($Data['categories'] as $category)
                                     <label class="col-6 col-md-4 d-flex justify-content-center">
                                         <input type="checkbox" name="category[]" value="{{ $category->id }}"
@@ -99,7 +89,7 @@
                                 </div>
                             </div>
                             <div class="mb-3">
-                                <label for="article-ckeditor" class="form-label" style="color:#4C2A70;">輸入內文</label>
+                                <label for="article-ckeditor" class="form-label u-prime-text">輸入內文</label>
                                 <textarea class="form-control" style="border: 2px solid #4C2A70;
                                 padding: 10px; border-radius: 5px; width:100%;" rows="30" id="article-ckeditor"
                                     name="postbody">{{old('postbody')}}</textarea>
@@ -117,7 +107,7 @@
                                     <option value="approve">已審核</option>
                                 </select>
                             </div>
-                            <button type="submit" class="btn btn-primary">送出</button>
+                            <button type="submit" class="btn o-smallBtn">送出</button>
                         </form>
                     </div>
                 </div>

@@ -8,7 +8,7 @@
     <meta name="author" content="" />
     <title>Senpai</title>
     <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="{{asset('favicon.ico')}}" />
+    <link rel="icon" type="image/x-icon" href="{{asset('uploads/images/senpai-icon.ico')}}" />
     <!-- Bootstrap icons-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet" />
     <!-- Custom styles for this template-->
@@ -38,7 +38,7 @@
                             href="{{route('study-abroad')}}">小學堂｜推薦</a></li>
                     @if(auth()->check())
                     <li class="l-header__li nav-item"><a class="nav-link scrollFunction"
-                            href="{{route('home')}}">易子學系統</a></li>
+                            href="{{route('home')}}">大學伴系統</a></li>
                     <li class="l-header__li nav-item">
                         <a href="{{route('home')}}">
                             <svg class="l-header__thumbNail" viewbox="0 0 80 80" xmlns="http://www.w3.org/2000/svg">
@@ -142,7 +142,7 @@
                 <!-- logo -->
                 <div class="col-12 col-md-6 col-lg-4 mx-auto">
                     <div class="l-footer__brand h-100">
-                        <img src="{{asset('uploads/images/yzl-footer-logo.png')}}" alt="footer logo">
+                        <img src="{{asset('uploads/images/hang-jia-logo-white.png')}}" alt="footer logo">
                         <div class="row g-3">
                             <p class="col-md-12 text-center">
                                 行家在線有限公司 | 統一編號 83453577 | all rights reserved<br>

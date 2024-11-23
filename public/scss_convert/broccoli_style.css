@@ -317,6 +317,14 @@ section {
   background-color: transparent;
 }
 
+.u-primeColor {
+  fill: #FE9300;
+}
+
+.u-prime-text {
+  color: #ab6400;
+}
+
 :root {
   --spacing-160: 16rem;
   --spacing-120: 12rem;
@@ -4649,7 +4657,7 @@ section {
 }
 
 .o-topicBox {
-  border: 2px solid #4C2A70;
+  border: 2px solid #FE9300;
   padding: 10px;
   border-radius: 5px;
   font-size: var(--text-lg);
@@ -4658,6 +4666,14 @@ section {
   .o-topicBox {
     font-size: var(--text-2xl);
   }
+}
+.o-topicBox__tag {
+  background-color: #FE9300;
+  display: inline-block;
+  margin: 0 5px 10px 0;
+  padding: 5px 10px;
+  color: #ffffff;
+  cursor: pointer;
 }
 
 .o-searchBar {
@@ -4689,7 +4705,7 @@ section {
 
 .o-input {
   caret-shape: block;
-  caret-color: #ffbc5e;
+  caret-color: #FE9300;
   letter-spacing: 0.2rem;
   font-size: var(--text-xl);
 }
@@ -4769,6 +4785,17 @@ section {
 
 .o-bulletBoard {
   background-color: #FE9300;
+}
+
+.o-subadmin__card {
+  border-right: var(--spacing-80) solid #FE9300;
+}
+
+.o-img-border {
+  border: 2px solid #FE9300;
+  padding: 10px;
+  border-radius: 5px;
+  width: 100%;
 }
 
 .s-swiperCustom .swiper {

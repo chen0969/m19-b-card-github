@@ -6,7 +6,7 @@
 
             <div class="row justify-content-md-center">
                 <div style="margin-bottom: 10px;" class="col-xl-10 col-lg-7">
-                    <div style="background: #4C2A70; padding:5px" class="card text-white shadow">
+                    <div class="card text-white shadow o-sbadminTitle">
                         <h2 style="margin: 0;" class="text-center">發布的問題</h2>
                     </div>
                 </div>
@@ -17,7 +17,7 @@
                         <div style="background: #FFFFFF;"
                             class="card-body d-flex justify-content-center">
                             <div class="col-xl-10 col-lg-7">
-                                <div class="card d-flex justify-content-center shadow" style="border-right: 50px solid #4C2A70">
+                                <div class="card d-flex justify-content-center shadow o-subadmin__card">
                                     <!-- Card Header - Dropdown -->
                                     <div class="d-flex flex-row align-items-center justify-content-between">
                                         <p class="ml-3 o-articleTitle">{{ Illuminate\Support\Str::limit($qa->title,  25) }}...</p>
@@ -46,7 +46,7 @@
                                             <?php
                                                 $cate = $Data['QACategory']->where('id', $cateId->category_id)->first();
                                             ?>
-                                            <span style="background: #4C2A70; color:#FFFFFF" href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm">
+                                            <span href="#" class="d-none d-sm-inline-block btn btn-sm shadow-sm o-smallBtn">
                                                 {{$cate->name}}
                                             </span>
                                         @endforeach
