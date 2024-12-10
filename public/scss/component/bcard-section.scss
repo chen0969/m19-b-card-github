@@ -1,0 +1,126 @@
+.c-banner {
+
+    // background-color: $light_gray;
+    &__header {
+        height: 22rem;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        margin-bottom: calc(-1*10rem);
+    }
+
+    &__footer {
+        width: 100%;
+        display: flex;
+        justify-content: end;
+    }
+
+    &__portrait {
+        width: var(--spacing-160);
+        border-radius: var(--spacing-160);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
+
+// welcome title
+.c-sections {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__tagline {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: calc(-1*var(--spacing-24));
+        z-index: 2;
+    }
+
+    &__title {
+        width: 75%;
+        font-size: var(--text-xl);
+        border: solid $light_gray var(--spacing-2);
+        border-radius: var(--spacing-8);
+        color: $light_gray;
+        padding: var(--spacing-8) var(--spacing-32);
+        margin-right: calc(-1*(var(--spacing-12)));
+        background-color: $bg_dark;
+        z-index: 3;
+
+        &__edit {
+            width: 75%;
+            border: solid $light_gray var(--spacing-2);
+            border-radius: var(--spacing-4);
+            color: $dark_gray;
+            padding: var(--spacing-8) var(--spacing-32);
+            margin-right: calc(-1*(var(--spacing-12)));
+            background-color: $light_gray;
+            z-index: 3;
+        }
+    }
+
+    &__btn {
+        all: unset;
+        cursor: pointer;
+        text-align: center;
+        padding: var(--spacing-8);
+        font-size: var(--text-lg);
+        border: var(--spacing-4) solid $light_gray;
+        border-radius: var(--spacing-32);
+        background-color: $bg_dark;
+        margin-left: calc(-1*(var(--spacing-12)));
+        color: $light_gray;
+        z-index: 4;
+
+        &__edit {
+            all: unset;
+            cursor: pointer;
+            text-align: center;
+            padding: var(--spacing-8);
+            font-size: var(--text-lg);
+            border: var(--spacing-4) solid $light_gray;
+            border-radius: var(--spacing-12);
+            background-color: $light_gray;
+            margin-left: calc(-1*(var(--spacing-12)));
+            color: black;
+            z-index: 4;
+        }
+    }
+
+    &__textarea{
+        background-color: $light_gray;
+        border-radius: var(--spacing-12);
+        z-index: 1;
+        padding: var(--spacing-24) var(--spacing-12);
+        width: 100%;
+
+        &__edit{
+            background-color: white;
+            border-radius: var(--spacing-12);
+            z-index: 1;
+            padding: var(--spacing-24) var(--spacing-12);
+            width: 100%;
+        }
+    }
+
+    &__companyName{
+        background-color: $bg_dark;
+        padding: var(--spacing-2) var(--spacing-64);
+        border: solid $light_gray var(--spacing-2);
+        border-radius: var(--spacing-12);
+        letter-spacing: var(--spacing-2);
+        color: $light_gray;
+    }
+}
+
+.c-socialSection {
+    &__icon {
+        font-size: var(--text-4xl);
+    }
+}

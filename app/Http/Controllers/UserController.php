@@ -18,13 +18,13 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function profile() 
+    public function profile()
     {
         $uid = Auth::user()->id;
         $skills = Skill::all();
         $user_skill_relation = UserSkillRelation::where('user_id', $uid)->get();
         $userSkills = [];
-        foreach($user_skill_relation as $ele) {
+        foreach ($user_skill_relation as $ele) {
             array_push($userSkills, $ele->skill_id);
         }
 
@@ -35,7 +35,7 @@ class UserController extends Controller
             'universities' => University::all()->transform(function ($item, $key) {
                 return [
                     'value' => $item->id,
-                    'label' => $item->chinese_name. $item->english_name
+                    'label' => $item->chinese_name . $item->english_name
                 ];
             }),
             'categories' => PostCategory::all(),
@@ -52,7 +52,7 @@ class UserController extends Controller
         return json_encode($User, JSON_UNESCAPED_UNICODE);
     }
 
-    public function update(Request $req) 
+    public function update(Request $req)
     {
 
         $req->validate([
@@ -60,7 +60,7 @@ class UserController extends Controller
             'description' => 'max:1200|nullable',
             'skills' => 'array|min:0|max:9',
             'post_categories' => 'array|min:0|max:3',
-            'email' => 'required_with:email|email|unique:users,email,'.auth()->user()->id,
+            'email' => 'required_with:email|email|unique:users,email,' . auth()->user()->id,
             'learning_experience' => 'array|min:0|max:5',
             'recommender' => 'nullable|email',
             'avatar' => 'nullable|mimes:jpeg,jpg,bmp,png|max:10240'
@@ -76,36 +76,49 @@ class UserController extends Controller
             'avatar.max' => "圖片不得大於10MB"
         ]);
 
-        if($req->filled('post_categories')){
-            if(count($req->post_categories) >3 ){
+        if ($req->filled('post_categories')) {
+            if (count($req->post_categories) > 3) {
                 return back()->withInput()->withErrors(['message' => '主題不得超過三個']);
             }
         }
 
         $uid = $req->uid;
         $User = User::where('id', $uid)->first();
-        $User->name = isset($req->name)?$req->name:$User->name;
-        $User->nickname = isset($req->nickname)?$req->nickname:$User->nickname;
-        $User->university = isset($req->university)?$req->university:$User->university;
-        $User->is_study = $req->has('is_study')?1:0;
-        $User->email = isset($req->email)?$req->email:$User->email;
-        if($req->has('phone')) { $User->phone = isset($req->phone)?$req->phone:''; }
-        if($req->has('line')) {$User->line = isset($req->line)?$req->line:''; }
-        if($req->has('fb')) { $User->fb = isset($req->fb)?$req->fb:''; }
-        if($req->has('ig')) { $User->ig = isset($req->ig)?$req->ig:''; }
-        if($req->has('linkedin')) { $User->linkedin = isset($req->linkedin)?$req->linkedin:''; }
-        $User->address = isset($req->address)?$req->address:$User->address;
-        $User->recommender = isset($req->recommender)?$req->recommender:$User->recommender;
-        if($req->has('description')) { $User->description = $req->description; }
-        if($req->has('profile_video')) { $User->profile_video = $req->profile_video; }
-        if($req->has('profile_voice')){ $User->profile_voice = $req->profile_voice; }
-        if(isset($req->skills)) 
-        {
-            // dd($req->skills);
-            if($req->skills!='') {
+        $User->name = isset($req->name) ? $req->name : $User->name;
+        $User->nickname = isset($req->nickname) ? $req->nickname : $User->nickname;
+        $User->university = isset($req->university) ? $req->university : $User->university;
+        $User->is_study = $req->has('is_study') ? 1 : 0;
+        $User->email = isset($req->email) ? $req->email : $User->email;
+        if ($req->has('phone')) {
+            $User->phone = isset($req->phone) ? $req->phone : '';
+        }
+        if ($req->has('line')) {
+            $User->line = isset($req->line) ? $req->line : '';
+        }
+        if ($req->has('fb')) {
+            $User->fb = isset($req->fb) ? $req->fb : '';
+        }
+        if ($req->has('ig')) {
+            $User->ig = isset($req->ig) ? $req->ig : '';
+        }
+        if ($req->has('linkedin')) {
+            $User->linkedin = isset($req->linkedin) ? $req->linkedin : '';
+        }
+        $User->address = isset($req->address) ? $req->address : $User->address;
+        $User->recommender = isset($req->recommender) ? $req->recommender : $User->recommender;
+        if ($req->has('description')) {
+            $User->description = $req->description;
+        }
+        if ($req->has('profile_video')) {
+            $User->profile_video = $req->profile_video;
+        }
+        if ($req->has('profile_voice')) {
+            $User->profile_voice = $req->profile_voice;
+        }
+        if (isset($req->skills)) {
+            if ($req->skills != '') {
                 $purgeSkills = UserSkillRelation::where('user_id', $uid)->delete();
-                foreach ($req->skills as $sId)
-                {
+                foreach ($req->skills as $sId) {
                     $userSkillRelation = new UserSkillRelation();
                     $userSkillRelation->updateOrCreate(
                         [
@@ -116,13 +129,10 @@ class UserController extends Controller
                 }
             }
         }
-        if(isset($req->post_categories))
-        {
-            // dd($req->skills);
-            if($req->post_categories!='') {
+        if (isset($req->post_categories)) {
+            if ($req->post_categories != '') {
                 $purgeSkills = UserPostCategoryRelation::where('user_id', $uid)->delete();
-                foreach ($req->post_categories as $sId)
-                {
+                foreach ($req->post_categories as $sId) {
                     $userSkillRelation = new UserPostCategoryRelation();
                     $userSkillRelation->updateOrCreate(
                         [
@@ -134,12 +144,10 @@ class UserController extends Controller
             }
         }
 
-        if($req->filled('learning_experience'))
-        {
+        if ($req->filled('learning_experience')) {
             $experiences = [];
-            foreach($req->learning_experience as $experience)
-            {
-                if(!empty($experience)){
+            foreach ($req->learning_experience as $experience) {
+                if (!empty($experience)) {
                     $insert = new Experience();
                     $insert->learning_experience = $experience;
                     $experiences[] = $insert;
@@ -153,44 +161,101 @@ class UserController extends Controller
         $User->avatar = $User->avatar;
         $User->student_proof = $User->student_proof;
 
-        if($req->file('avatar')) {
+        if ($req->file('avatar')) {
             $file = $req->file('avatar');
-            $fileName = time().'-'.$file->getClientOriginalName();
+            $fileName = time() . '-' . $file->getClientOriginalName();
             $file->storeAs('images', $fileName, 'admin');
 
-            $User->avatar = '/images/'.$fileName;
+            $User->avatar = '/images/' . $fileName;
         }
-        
-        if($req->file('student_proof')) {
+
+        if ($req->file('student_proof')) {
             $file = $req->file('student_proof');
-            $fileName = time().'-'.$file->getClientOriginalName();
+            $fileName = time() . '-' . $file->getClientOriginalName();
             $file->storeAs('images', $fileName, 'admin');
-            $User->student_proof = '/images/'.$fileName;
+            $User->student_proof = '/images/' . $fileName;
         }
 
-        if($req->file('references')){
-//            foreach($req->references as $reference) {
-                $fileName = time().'-'.$req->references->getClientOriginalName();
-                $req->references->storeAs('references', $fileName, 'admin');
-                $User->references()->create([
-                    'user_id' => auth()->user()->id,
-                    'image_path' => '/references/'.$fileName,
-                    'file_name' => $req->references->getClientOriginalName()
-                ]);
-//            }
+        if ($req->file('references')) {
+            $fileName = time() . '-' . $req->references->getClientOriginalName();
+            $req->references->storeAs('references', $fileName, 'admin');
+            $User->references()->create([
+                'user_id' => auth()->user()->id,
+                'image_path' => '/references/' . $fileName,
+                'file_name' => $req->references->getClientOriginalName()
+            ]);
         }
 
         $User->save();
-        return back();        
+        return back();
     }
 
-    public function getUserBySkill(Request $req) 
+    // m19 business card functions
+    public function updateName(Request $req)
+    {
+        // Validate input data
+        $req->validate([
+            'name' => 'required|string|max:255',
+        ]);
+
+        // Get the currently logged-in user
+        $User = Auth::user();
+
+        // Check if the user exists
+        if (!$User) {
+            return back()->withErrors(['error' => 'User not found.']);
+        }
+
+        // Update user fields
+        $User->name = $req->name;
+
+        // Save changes
+        if ($User->save()) {
+            // Return back with a success message
+            return back()->with('success', '資料更新成功。');
+        } else {
+            // Handle save failure
+            return back()->withErrors(['error' => 'Failed to update name.']);
+        }
+    }
+
+    public function updateDescription(Request $req)
+    {
+        // Validate input data
+        $req->validate([
+            'description' => 'max:1200|nullable',
+        ]);
+
+        // Get the currently logged-in user
+        $User = Auth::user();
+
+        // Check if the user exists
+        if (!$User) {
+            return back()->withErrors(['error' => 'User not found.']);
+        }
+
+        // Update user fields
+        $User->description = $req->description;
+
+        // Save changes
+        if ($User->save()) {
+            // Return back with a success message
+            return back()->with('success', '資料更新成功。');
+        } else {
+            // Handle save failure
+            return back()->withErrors(['error' => 'Failed to update name.']);
+        }
+    }
+
+    // end of b-card function
+
+
+    public function getUserBySkill(Request $req)
     {
         $skillId = $req->skill_id;
         $users = [];
         $user_skill_relation = UserSkillRelation::where('skill_id', $skillId)->get();
-        foreach($user_skill_relation as $ele)
-        {
+        foreach ($user_skill_relation as $ele) {
             $user = User::where('id', $ele->user_id)->first();
             //dd($user);
             array_push($users, $user);
@@ -208,8 +273,7 @@ class UserController extends Controller
         $uid = Auth::user()->id;
         $inviteList = Invite::where('to_uid', $uid)->get();
         $userList = [];
-        foreach($inviteList as $ele)
-        {
+        foreach ($inviteList as $ele) {
             $inviteUser = User::where('id', $ele->from_uid)->first();
             array_push($userList, $inviteUser);
         }
@@ -229,9 +293,9 @@ class UserController extends Controller
     {
         $uid = Auth::user()->id;
         $collect = CollectUser::where('uid', $uid)->get();
-        
+
         $users = [];
-        foreach($collect as $ele) {
+        foreach ($collect as $ele) {
             $user = User::where('id', $ele->user_id)->first();
             array_push($users, $user);
         }
@@ -246,28 +310,27 @@ class UserController extends Controller
     public function referenceDelete($id)
     {
         $reference = UserReference::where('id', $id)->where('user_id', auth()->user()->id)->first();
-        if(is_null($reference)) {
+        if (is_null($reference)) {
             return redirect()->back();
         }
 
-        unlink(public_path('uploads'.$reference->image_path));
+        unlink(public_path('uploads' . $reference->image_path));
         $reference->delete();
 
         return redirect()->back();
-
     }
 
     public function referenceDownload($id)
     {
         $file = UserReference::where('id', $id)->first();
-        if(is_null($file)){
+        if (is_null($file)) {
             return redirect()->back();
         }
-        if(!file_exists(public_path('uploads'.$file->image_path))){
+        if (!file_exists(public_path('uploads' . $file->image_path))) {
             return redirect()->back();
         }
 
-        return response()->download(public_path('uploads'.$file->image_path, $file->file_name));
+        return response()->download(public_path('uploads' . $file->image_path, $file->file_name));
     }
 
     public function deleteCollect($id)

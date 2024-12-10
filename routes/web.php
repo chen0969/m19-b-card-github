@@ -60,7 +60,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 //PostController
-Route::group(['middleware' => ['auth', 'isEmailVerified']],function() {
+Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
 
     Route::get('/list-posts', 'PostController@list')->name('list-all-posts');
     Route::get('/collect-posts', 'PostController@collect')->name('collect-posts');
@@ -89,8 +89,13 @@ Route::group(['middleware' => ['auth', 'isEmailVerified']],function() {
     Route::get('/user/collect-user', 'UserController@collect')->name('collect-user');
     Route::get('/user/skill', 'UserController@getUserBySkill');
     Route::get('/user/profile', 'UserController@profile')->name('profile');
+    // Route::post('/user/profile/update', 'UserController@update')->name('update-profile');
     Route::post('/user/profile/update', 'UserController@update')->name('update-profile');
-    Route::post('/user/profile/update', 'UserController@update')->name('update-profile');
+    // the new code
+    // Route for updating user profile
+    Route::post('/user/profile/update-name', 'UserController@updateName')->name('update-name');
+    Route::post('/user/profile/update-description', 'UserController@updateDescription')->name('update-description');
+    // end of user profile 
     Route::get('/user/invite-list', 'UserController@showInviteList');
     Route::post('/user/accept-invite/{id}', 'UserController@getInviteList')->name('accept-invite');
     Route::delete('/user/delete-collect/{id}', 'UserController@deleteCollect')->name('delete-collect');
