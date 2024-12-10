@@ -21,12 +21,12 @@
 <body id="bCard" class="l-bg container">
     <header class="row">
         <!-- hero banner & home btn -->
-        <div class="col-12">
-            <div class="c-banner__header pt-3 pl-3" style="background-image: url('{{asset('uploads/images/hero-banner.jpg')}}') ;">
-                <i class="bi bi-house-door o-whiteBtn"></i>
+        <div class="col-12 pl-5 pr-5">
+            <div class="c-banner__header" style="background-image: url('{{asset('uploads/images/default-banner.jpg')}}') ;">
+                <i class="bi bi-house-door c-banner__white"></i>
             </div>
-            <div class="c-banner__footer pr-3">
-                <i class="bi bi-pencil text-white c-sections__edit"></i>
+            <div class="c-banner__footer">
+                <i class="bi bi-pencil text-white c-banner__edit"></i>
             </div>
         </div>
         <!-- profile portrait -->
@@ -57,12 +57,15 @@
         @yield('content')
     </main>
     <footer class="sticky-footer bg-white row">
+        <div class="c-settings col-12 text-end">
+            <i class="c-settings__icon p-2 bi bi-gear-fill text-center"></i>
+        </div>
         <div class="copyright text-center my-auto">
-            Copyright &copy; 行家在線有限公司 2024
+            Copyright &copy; Match19 2024
         </div>
     </footer>
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('sb-admin/vendor/jquery/jquery.min.js') }}"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
     <!-- TinyMce editor-->
     <!-- <script src="{{ asset('vendor/laravel-admin-ext/tinymce/tinymce/tinymce.min.js')  }}"></script> -->
     <!-- custome js -->

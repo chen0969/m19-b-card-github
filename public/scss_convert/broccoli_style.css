@@ -2092,12 +2092,15 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+  padding-top: var(--spacing-24);
+  padding-left: var(--spacing-24);
   margin-bottom: -10rem;
 }
 .c-banner__footer {
   width: 100%;
   display: flex;
   justify-content: end;
+  padding-right: var(--spacing-24);
 }
 .c-banner__portrait {
   width: var(--spacing-160);
@@ -2105,6 +2108,21 @@ section {
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+.c-banner__white {
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-80);
+  background-color: #d7d7d7;
+  color: #222222;
+  font-size: var(--text-xl);
+}
+.c-banner__edit {
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-80);
+  background-color: #222222;
+  color: #d7d7d7;
+  font-size: var(--text-xl);
+  border: solid var(--spacing-4) #d7d7d7;
 }
 
 .c-sections {
@@ -2192,9 +2210,47 @@ section {
   letter-spacing: var(--spacing-2);
   color: #d7d7d7;
 }
+.c-sections__hr {
+  align-items: center;
+  height: var(--spacing-2);
+  width: 75%;
+  border-width: 0;
+  color: #222222;
+  background-color: #222222;
+}
+.c-sections__edit {
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-80);
+  background-color: #222222;
+  color: #d7d7d7;
+}
 
 .c-socialSection__icon {
   font-size: var(--text-4xl);
+}
+
+.c-addSection {
+  width: 100%;
+  color: #d7d7d7;
+  border: dotted #d7d7d7 var(--spacing-2);
+  border-radius: var(--spacing-32);
+  min-height: var(--spacing-120);
+}
+.c-addSection__icon {
+  font-size: 10rem;
+}
+
+.c-settings {
+  position: fixed;
+  right: var(--spacing-8);
+  bottom: var(--spacing-16);
+}
+.c-settings__icon {
+  padding: var(--spacing-4);
+  border-radius: var(--spacing-80);
+  background-color: #222222;
+  color: #d7d7d7;
+  font-size: 5rem;
 }
 
 .o-smallBtn {

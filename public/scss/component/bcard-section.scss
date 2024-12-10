@@ -6,6 +6,8 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+        padding-top: var(--spacing-24);
+        padding-left: var(--spacing-24);
         margin-bottom: calc(-1*10rem);
     }
 
@@ -13,6 +15,7 @@
         width: 100%;
         display: flex;
         justify-content: end;
+        padding-right: var(--spacing-24);
     }
 
     &__portrait {
@@ -21,6 +24,23 @@
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+
+    &__white {
+        padding: var(--spacing-4);
+        border-radius: var(--spacing-80);
+        background-color: $light_gray;
+        color: $bg_dark;
+        font-size: var(--text-xl);
+    }
+
+    &__edit {
+        padding: var(--spacing-4);
+        border-radius: var(--spacing-80);
+        background-color: $bg_dark;
+        color: $light_gray;
+        font-size: var(--text-xl);
+        border: solid var(--spacing-4) $light_gray;
     }
 }
 
@@ -93,14 +113,14 @@
         }
     }
 
-    &__textarea{
+    &__textarea {
         background-color: $light_gray;
         border-radius: var(--spacing-12);
         z-index: 1;
         padding: var(--spacing-24) var(--spacing-12);
         width: 100%;
 
-        &__edit{
+        &__edit {
             background-color: white;
             border-radius: var(--spacing-12);
             z-index: 1;
@@ -109,7 +129,7 @@
         }
     }
 
-    &__companyName{
+    &__companyName {
         background-color: $bg_dark;
         padding: var(--spacing-2) var(--spacing-64);
         border: solid $light_gray var(--spacing-2);
@@ -117,10 +137,52 @@
         letter-spacing: var(--spacing-2);
         color: $light_gray;
     }
+
+    &__hr {
+        align-items: center;
+        height: var(--spacing-2);
+        width: 75%;
+        border-width: 0;
+        color: $bg_dark;
+        background-color: $bg_dark;
+    }
+
+    &__edit {
+        padding: var(--spacing-4);
+        border-radius: var(--spacing-80);
+        background-color: $bg_dark;
+        color: $light_gray;
+    }
 }
 
 .c-socialSection {
     &__icon {
         font-size: var(--text-4xl);
+    }
+}
+
+.c-addSection {
+    width: 100%;
+    color: $light_gray;
+    border: dotted $light_gray var(--spacing-2);
+    border-radius: var(--spacing-32);
+    min-height: var(--spacing-120);
+
+    &__icon {
+        font-size: 10rem;
+    }
+}
+
+.c-settings {
+    position: fixed;
+    right: var(--spacing-8);
+    bottom: var(--spacing-16);
+
+    &__icon {
+        padding: var(--spacing-4);
+        border-radius: var(--spacing-80);
+        background-color: $bg_dark;
+        color: $light_gray;
+        font-size: 5rem;
     }
 }

@@ -104,10 +104,10 @@
             </div>
             <div class="c-sections__textarea d-flex flex-column align-items-center justify-content-center mt-3">
                 <h5>公司名稱:</h5>
-                <h4 class="c-sections__companyName fs-2 m-2">the company test</h4>
+                <h4 class="c-sections__companyName fs-2 m-2">{{ Auth::user()->company_name }}</h4>
                 <h5>公司簡介:</h5>
-                <h4>company description</h4>
-                <hr>
+                <h4>{{ Auth::user()->company_description }}</h4>
+                <hr class="c-sections__hr">
                 <h5>公司社群:</h5>
                 <div class="container">
                     <div class="row g-3">
@@ -138,6 +138,18 @@
                 <div class="c-sections__textarea__edit d-flex justify-content-center">
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<!-- add section -->
+<div class="row justify-content-center">
+    <div class="col-12 mt-3 p-3 animate__animated animate__fadeIn d-flex flex-column align-items-center justify-content-center">
+        <div class="c-addSection">
+            <h6 class="col-12 text-center fs-2 mt-3">營運公司</h6>
+            <div class="col-12 text-center">
+                <i class="bi bi-plus text-center c-addSection__icon"></i>
+            </div>
         </div>
     </div>
 </div>
