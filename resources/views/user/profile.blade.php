@@ -104,7 +104,7 @@
             </div>
             <div class="c-sections__textarea d-flex flex-column align-items-center justify-content-center mt-3">
                 <h5>公司名稱:</h5>
-                <h4 class="c-sections__companyName fs-2 m-2">the company</h4>
+                <h4 class="c-sections__companyName fs-2 m-2">the company test</h4>
                 <h5>公司簡介:</h5>
                 <h4>company description</h4>
                 <hr>
