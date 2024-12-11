@@ -16,6 +16,19 @@
 Route::get('about-us', 'AboutUsController@index');
 Route::get('yizixue-faq', 'YizixueFaqController@index');
 /* End of new pages */
+Route::get('/', 'FrontPageController@index');
+Route::get('introduction/{id}', 'IntroductionController@getDetial')->name('get-introduction');
+Route::get('article-list/{user}', 'ArticleController@getAllArticle')->name('article-list');
+Route::get('article/{article}', 'ArticleController@getArticle')->name('article');
+Route::get('study-abroad', 'ArticleController@studyAbroad')->name('study-abroad');
+Route::get('senior', 'SeniorController@index')->name('senior');
+Route::any('line-pay/confirm', 'LinePayController@confirm')->name('line-pay-confirm');
+Route::any('line-pay/cancel', 'LinePayController@cancel')->name('line-pay-cancel');
+Route::get('membership-agreement', 'ContractController@membershipAgreement')->name('membership-agreement');
+Route::get('service-agreement', 'ContractController@serviceAgreement')->name('service-agreement');
+Route::get('disclaimer', 'ContractController@disclaimer')->name('disclaimer');
+Route::get('subscription-agreement', 'ContractController@subscriptionAgreement')->name('subscription-agreement');
+Route::get('privacy', 'ContractController@privacy')->name('privacy');
 
 //line login
 Route::get('/line', 'LoginController@pageLine');
