@@ -24,7 +24,7 @@
 
 <!-- self intro -->
 <div class="row justify-content-center">
-    <div class="c-section col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
+    <div class="c-sections col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
         <div id="description-display" class="c-sections p-3 animate__animated animate__fadeIn">
             <div class="c-sections__tagline">
                 <h5 class="c-sections__title text-center">自我介紹</h5>
@@ -50,7 +50,7 @@
 
 <!-- contact info -->
 <div class="row justify-content-center">
-    <div class="c-section col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
+    <div class="c-sections col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
         <div id="contact-display" class="c-sections p-3 animate__animated animate__fadeIn">
             <div class="c-sections__tagline">
                 <h5 class="c-sections__title text-center">聯絡資訊</h5>
@@ -64,14 +64,14 @@
                     </li>
                     <li class="d-flex flex-row fs-1"><i class="bi bi-envelope-fill"></i>
                         <p>email:</p>
-                        <p>{{ Auth::user()->email }}</p>
+                        <p class="text-break">{{ Auth::user()->email }}</p>
                     </li>
                 </ul>
             </div>
         </div>
         <!-- input -->
         <div id="contact-input" class="c-sections p-3 animate__animated animate__bounce" style="display: none;">
-            <form class="c-sections" method="POST" action="{{ route('update-name') }}" enctype="multipart/form-data">
+            <form class="c-sections" method="POST" action="{{ route('update-contact') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="c-sections__tagline">
                     <h5 class="c-sections__title__edit text-center">聯絡資訊</h5>
@@ -96,8 +96,8 @@
 
 <!-- company -->
 <div class="row justify-content-center">
-    <div class="c-section col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
-        <div id="contact-display" class="c-sections p-3 animate__animated animate__fadeIn">
+    <div class="c-sections col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
+        <div id="company-display" class="c-sections p-3 animate__animated animate__fadeIn">
             <div class="c-sections__tagline">
                 <h5 class="c-sections__title text-center">營運公司</h5>
                 <i class="bi bi-pencil c-sections__btn" data-section="company"></i>
@@ -112,30 +112,52 @@
                 <div class="container">
                     <div class="row g-3">
                         <button class="col">
-                            <a href="{{ Auth::user()->line }}"><i class="bi bi-line c-socialSection__icon text-white"></i></a>
+                            <a href="{{ Auth::user()->line }}"><i class="bi bi-line c-socialSection__iconDark"></i></a>
                         </button>
                         <button class="col">
-                            <a href="{{ Auth::user()->fb }}"><i class="bi bi-facebook c-socialSection__icon text-white"></i></a>
+                            <a href="{{ Auth::user()->fb }}"><i class="bi bi-facebook c-socialSection__iconDark"></i></a>
                         </button>
                         <button class="col">
-                            <a href="{{ Auth::user()->ig }}"><i class="bi bi-instagram c-socialSection__icon text-white"></i></a>
+                            <a href="{{ Auth::user()->ig }}"><i class="bi bi-instagram c-socialSection__iconDark"></i></a>
                         </button>
                         <button class="col">
-                            <a href="{{ Auth::user()->fb }}"><i class="bi bi-twitter-x c-socialSection__icon text-white"></i></a>
+                            <a href="{{ Auth::user()->fb }}"><i class="bi bi-twitter-x c-socialSection__iconDark"></i></a>
                         </button>
                     </div>
                 </div>
             </div>
         </div>
         <!-- input -->
-        <div id="contact-input" class="c-sections p-3 animate__animated animate__bounce" style="display: none;">
+        <div id="company-input" class="c-sections p-3 animate__animated animate__bounce" style="display: none;">
             <form class="c-sections" method="POST" action="{{ route('update-name') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="c-sections__tagline">
                     <h5 class="c-sections__title__edit text-center">營運公司</h5>
                     <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="company-edit"></i></button>
                 </div>
-                <div class="c-sections__textarea__edit d-flex justify-content-center">
+                <div class="c-sections__textarea__edit d-flex flex-column align-items-center justify-content-center mt-3">
+                    <h5>公司名稱:</h5>
+                    <input type="text" value="{{ Auth::user()->company_name }}" name="company_name">
+                    <h5>公司簡介:</h5>
+                    <input type="text" value="{{ Auth::user()->company_description }}" name="company_description">
+                    <hr class="c-sections__hr">
+                    <h5>公司社群:</h5>
+                    <div class="container">
+                        <div class="row g-3">
+                            <div class="col0-12">
+                                <i class="bi bi-line c-socialSection__iconDark"></i><input type="text" value="{{ Auth::user()->line }}" name="company_name">
+                            </div>
+                            <div class="col-12">
+                                <i class="bi bi-facebook c-socialSection__iconDark"></i><input type="text" value="{{ Auth::user()->fb }}" name="company_name">
+                            </div>
+                            <div class="col-12">
+                                <i class="bi bi-instagram c-socialSection__iconDark"></i><input type="text" value="{{ Auth::user()->ig }}" name="company_name">
+                            </div>
+                            <div class="col-12">
+                                <i class="bi bi-twitter-x c-socialSection__iconDark"></i><input type="text" value="{{ Auth::user()->fb }}" name="company_name">
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </form>
         </div>

@@ -159,6 +159,10 @@
     &__icon {
         font-size: var(--text-4xl);
     }
+    &__iconDark{
+        font-size: var(--text-4xl);
+        color: $bg_dark;
+    }
 }
 
 .c-addSection {
@@ -175,14 +179,53 @@
 
 .c-settings {
     position: fixed;
+    width: fit-content;
+    height: fit-content;
     right: var(--spacing-8);
     bottom: var(--spacing-16);
 
     &__icon {
-        padding: var(--spacing-4);
+        // padding: var(--spacing-4);
+        margin: var(--spacing-12) 0;
         border-radius: var(--spacing-80);
         background-color: $bg_dark;
         color: $light_gray;
         font-size: 5rem;
+    }
+
+    &__content{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}
+
+.c-bgColorPicker{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #fdfdfd83;
+    z-index: 3;
+
+    &__card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--spacing-16);
+        width: 50%;
+        height: 50%;
+        background-color: $light_gray;
+        padding: var(--spacing-12);
+        aspect-ratio: 1/1;
+    }
+
+    &__input{
+        width: 80%;
+        height: var(--spacing-160);
     }
 }

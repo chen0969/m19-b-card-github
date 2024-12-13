@@ -109,5 +109,60 @@ class UserController extends Controller
         }
     }
 
+    public function updateContact(Request $req)
+    {
+        $req->validate([
+            'phone' => 'string|max:255|nullable',
+            'email' => 'string|max:255|nullable',
+        ]);
+
+        $User = Auth::user();
+        if (!$User) {
+            return back()->withErrors(['error' => 'User phone & email info not found.']);
+        }
+        if ($req->has('phone')) {
+            $User->phone = isset($req->phone) ? $req->phone : '';
+        }
+        if ($req->has('email')) {
+            $User->email = isset($req->email) ? $req->email : '';
+        }
+
+        if ($User->save()) {
+            // Return back with a success message
+            return back()->with('success', '資料更新成功。');
+        } else {
+            // Handle save failure
+            return back()->withErrors(['error' => 'Failed to update name.']);
+        }
+    }
+
+    public function updateBgColor(Request $req)
+    {
+        // Validate input data
+        $req->validate([
+            'bg_color' => ['required', 'regex:/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/'],
+        ]);
+
+        // Get the currently logged-in user
+        $User = Auth::user();
+
+        // Check if the user exists
+        if (!$User) {
+            return back()->withErrors(['error' => 'User not found.']);
+        }
+
+        // Update user fields
+        $User->bg_color = $req->bg_color;
+
+        // Save changes
+        if ($User->save()) {
+            // Return back with a success message
+            return back()->with('success', '資料更新成功。');
+        } else {
+            // Handle save failure
+            return back()->withErrors(['error' => 'Failed to update bg color.']);
+        }
+    }
+
     // end of b-card function
 }

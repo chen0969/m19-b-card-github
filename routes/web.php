@@ -71,6 +71,8 @@ Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
     // Route for updating user profile
     Route::post('/user/profile/update-name', 'UserController@updateName')->name('update-name');
     Route::post('/user/profile/update-description', 'UserController@updateDescription')->name('update-description');
+    Route::post('/user/profile/update-contact', 'UserController@updateContact' )->name('update-contact');
+    Route::post('/user/profile/update-bgColor', 'UserController@updateBgColor' )->name('update-bgColor');
     // end of user profile 
 
     Route::get('/bulletinboard', 'BulletinBoardController@index')->name('bulletinboard');

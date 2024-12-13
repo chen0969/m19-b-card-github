@@ -18,8 +18,8 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('scss_convert/broccoli_style.css') }}">
 </head>
 
-<body id="bCard" class="l-bg container">
-    <header class="row">
+<body class="container" style="background-color: {{ Auth::user()->bg_color }}">
+    <header id="bCards-header" class="row">
         <!-- hero banner & home btn -->
         <div class="col-12 pl-5 pr-5">
             <div class="c-banner__header" style="background-image: url('{{asset('uploads/images/default-banner.jpg')}}') ;">
@@ -53,13 +53,26 @@
             </form>
         </div>
     </header>
-    <main class="mt-3">
+    <main id="bCards-main" class="mt-3">
         @yield('content')
     </main>
     <footer class="sticky-footer bg-white row">
-        <div class="c-settings col-12 text-end">
-            <i class="c-settings__icon p-2 bi bi-gear-fill text-center"></i>
+        <div class="c-settings col-12 bg-white d-flex flex-column-reverse">
+            <i id="settingToggler" class="c-settings__icon p-2 bi bi-gear-fill text-center" data-role="settingToggler"></i>
+            <div id="settingContent" class="c-settings__content" style="display: none;" data-status="none">
+                <i id="profileBtn" class="c-settings__icon p-2 bi bi bi-person-fill-gear text-center"></i>
+                <i id="bookmarkBtn" class="c-settings__icon p-2 bi bi-bookmarks-fill text-center"></i>
+                <i id="bgBtn" class="c-settings__icon p-2 bi bi-back text-center"></i>
+            </div>
         </div>
+        <form id="bgColorPicker" style="display: none;" class="container c-bgColorPicker" data-status="none" method="POST" action="{{ route('update-bgColor') }}" enctype="multipart/form-data">
+            {{ csrf_field() }}
+            <div class="row c-bgColorPicker__card">
+                <label for="bg_color" class="fs-3 text-center">Select your background color</label>
+                <input type="color" id="bg-color" class="c-bgColorPicker__input" name="bg_color" value="{{ Auth::User()->bg_color }}">
+                <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="bgColor-edit"></i></button>
+            </div>
+        </form>
         <div class="copyright text-center my-auto">
             Copyright &copy; Match19 2024
         </div>
