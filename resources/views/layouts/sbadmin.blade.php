@@ -56,16 +56,16 @@
     <main id="bCards-main" class="mt-3">
         @yield('content')
     </main>
-    <footer class="sticky-footer bg-white row">
-        <div class="c-settings col-12 bg-white d-flex flex-column-reverse">
+    <footer class="sticky-footer row">
+        <div class="c-settings col-12 d-flex flex-column-reverse">
             <i id="settingToggler" class="c-settings__icon p-2 bi bi-gear-fill text-center" data-role="settingToggler"></i>
-            <div id="settingContent" class="c-settings__content" style="display: none;" data-status="none">
+            <div id="settingContent" class="c-settings__content animate__animated animate__slideInUp animate__faster" style="display: none;" data-status="none">
                 <i id="profileBtn" class="c-settings__icon p-2 bi bi bi-person-fill-gear text-center"></i>
                 <i id="bookmarkBtn" class="c-settings__icon p-2 bi bi-bookmarks-fill text-center"></i>
                 <i id="bgBtn" class="c-settings__icon p-2 bi bi-back text-center"></i>
             </div>
         </div>
-        <form id="bgColorPicker" style="display: none;" class="container c-bgColorPicker" data-status="none" method="POST" action="{{ route('update-bgColor') }}" enctype="multipart/form-data">
+        <form id="bgColorPicker" style="display: none;" class="container c-bgColorPicker animate__animated animate__slideInUp animate__faster" data-status="none" method="POST" action="{{ route('update-bgColor') }}" enctype="multipart/form-data">
             {{ csrf_field() }}
             <div class="row c-bgColorPicker__card">
                 <label for="bg_color" class="fs-3 text-center">Select your background color</label>
@@ -73,9 +73,9 @@
                 <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="bgColor-edit"></i></button>
             </div>
         </form>
-        <div class="copyright text-center my-auto">
+        <p class="copyright text-center my-auto text-white">
             Copyright &copy; Match19 2024
-        </div>
+        </p>
     </footer>
     <!-- Bootstrap core JavaScript-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
