@@ -2228,6 +2228,9 @@ section {
 .c-socialSection__icon {
   font-size: var(--text-4xl);
 }
+.c-socialSection__icon__hide {
+  opacity: 0.3;
+}
 .c-socialSection__iconDark {
   font-size: var(--text-4xl);
   color: #222222;
@@ -2292,6 +2295,34 @@ section {
 .c-bgColorPicker__input {
   width: 80%;
   height: var(--spacing-160);
+}
+
+.c-socialBtnPicker {
+  top: 0;
+  left: 0;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  padding: var(--spacing-24);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(91, 91, 91, 0.5137254902);
+  z-index: 3;
+}
+.c-socialBtnPicker__card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border-radius: var(--spacing-16);
+  width: 90%;
+  height: 50%;
+  background-color: #d7d7d7;
+  padding: var(--spacing-12);
+  aspect-ratio: 1/1;
+}
+.c-socialBtnPicker__input {
+  width: 80%;
 }
 
 .o-smallBtn {

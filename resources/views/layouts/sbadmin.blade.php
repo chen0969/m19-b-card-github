@@ -16,6 +16,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <!-- broccoli style -->
     <link rel="stylesheet" type="text/css" href="{{ asset('scss_convert/broccoli_style.css') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 </head>
 
 <body class="container" style="background-color: {{ Auth::user()->bg_color }}">
@@ -56,7 +57,7 @@
     <main id="bCards-main" class="mt-3">
         @yield('content')
     </main>
-    <footer class="sticky-footer row">
+    <footer id="bCards-footer" class="sticky-footer row">
         <div class="c-settings col-12 d-flex flex-column-reverse">
             <i id="settingToggler" class="c-settings__icon p-2 bi bi-gear-fill text-center" data-role="settingToggler"></i>
             <div id="settingContent" class="c-settings__content animate__animated animate__slideInUp animate__faster" style="display: none;" data-status="none">

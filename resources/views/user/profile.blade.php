@@ -1,26 +1,46 @@
 @extends('layouts.sbadmin')
 
 @section('content')
-<!-- details -->
-<div class="row justify-content-center">
-    <!-- social media section -->
+<!-- social media section -->
+<div id="socialBtns" class="row justify-content-center">
     <div class="col-md-12 w-75 pt-3">
-        <div class="row g-2">
-            <button class="col">
-                <a href="{{ Auth::user()->line }}"><i class="bi bi-line c-socialSection__icon text-white"></i></a>
+        <div class="row g-2 justify-content-around">
+            <button class="col-3">
+                <a href="{{ Auth::user()->line }}"><i class="bi bi-line c-socialSection__icon text-white" data-btn_status="show"></i></a>
             </button>
-            <button class="col">
-                <a href="{{ Auth::user()->fb }}"><i class="bi bi-facebook c-socialSection__icon text-white"></i></a>
+            <button class="col-3">
+                <a href="{{ Auth::user()->fb }}"><i class="bi bi-facebook c-socialSection__icon text-white" data-btn_status="show"></i></a>
             </button>
-            <button class="col">
-                <a href="{{ Auth::user()->ig }}"><i class="bi bi-instagram c-socialSection__icon text-white"></i></a>
-            </button>
-            <button class="col">
-                <a href="{{ Auth::user()->fb }}"><i class="bi bi-twitter-x c-socialSection__icon text-white"></i></a>
+            <button class="col-3">
+                <a href="#"><i class="bi bi-plus-circle-dotted c-socialSection__icon text-white" data-btn_status="show"></i></a>
             </button>
         </div>
     </div>
 </div>
+
+<!-- scoial picker -->
+<form id="socialPicker" style="display: none;" class="container c-socialBtnPicker animate__animated animate__slideInUp animate__faster" data-status="none" method="POST" action="" enctype="multipart/form-data">
+    {{ csrf_field() }}
+    <div class="row c-socialBtnPicker__card">
+        <label for="bg_color" class="col-12 fs-3 text-center">Arrange your social media accounts</label>
+        <div class="row">
+            <i class="col bi bi-line c-socialSection__icon" data-btn_status="pick"></i>
+            <i class="col bi bi-facebook c-socialSection__icon" data-btn_status="pick"></i>
+            <i class="col bi bi-instagram c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-twitter-x c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-linkedin c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-discord c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-pinterest c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-threads-fill c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-tiktok c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-youtube c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-wechat c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+            <i class="col bi bi-whatsapp c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+        </div>
+        <input type="text" id="bg-color" class="col-12 c-socialBtnPicker__input" name="bg_color" value="test">
+        <button type="submit" class="col-12"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="bgColor-edit"></i></button>
+    </div>
+</form>
 
 <!-- self intro -->
 <div class="row justify-content-center">
@@ -110,18 +130,9 @@
                 <hr class="c-sections__hr">
                 <h5>公司社群:</h5>
                 <div class="container">
-                    <div class="row g-3">
-                        <button class="col">
-                            <a href="{{ Auth::user()->line }}"><i class="bi bi-line c-socialSection__iconDark"></i></a>
-                        </button>
-                        <button class="col">
-                            <a href="{{ Auth::user()->fb }}"><i class="bi bi-facebook c-socialSection__iconDark"></i></a>
-                        </button>
-                        <button class="col">
-                            <a href="{{ Auth::user()->ig }}"><i class="bi bi-instagram c-socialSection__iconDark"></i></a>
-                        </button>
-                        <button class="col">
-                            <a href="{{ Auth::user()->fb }}"><i class="bi bi-twitter-x c-socialSection__iconDark"></i></a>
+                    <div class="row g-3 justify-content-around">
+                        <button class="col-3">
+                            <a href="#"><i class="bi bi-plus-circle-dotted c-socialSection__iconDark"></i></a>
                         </button>
                     </div>
                 </div>

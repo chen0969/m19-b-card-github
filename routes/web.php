@@ -16,7 +16,10 @@
 Route::get('about-us', 'AboutUsController@index');
 Route::get('yizixue-faq', 'YizixueFaqController@index');
 /* End of new pages */
-Route::get('/', 'FrontPageController@index');
+// Route::get('/', 'FrontPageController@index');
+Route::get('/', function () {
+    return view('welcome');
+});
 Route::get('introduction/{id}', 'IntroductionController@getDetial')->name('get-introduction');
 Route::get('article-list/{user}', 'ArticleController@getAllArticle')->name('article-list');
 Route::get('article/{article}', 'ArticleController@getArticle')->name('article');
@@ -61,13 +64,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 //PostController
 Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
 
-    Route::get('/user/get', 'UserController@getAll');
+    Route::get('/user/get', 'UserController@getAll')->name('user-get');
     Route::get('/user/collect-user', 'UserController@collect')->name('collect-user');
     Route::get('/user/skill', 'UserController@getUserBySkill');
     Route::get('/user/profile', 'UserController@profile')->name('profile');
-    // Route::post('/user/profile/update', 'UserController@update')->name('update-profile');
     Route::post('/user/profile/update', 'UserController@update')->name('update-profile');
-    // the new code
+    // the new code｀
     // Route for updating user profile
     Route::post('/user/profile/update-name', 'UserController@updateName')->name('update-name');
     Route::post('/user/profile/update-description', 'UserController@updateDescription')->name('update-description');
