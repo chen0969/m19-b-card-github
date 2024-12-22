@@ -8,6 +8,10 @@ const $bCardsFooter = document.getElementById('bCards-footer')
 const $socialBtns = document.getElementById('socialBtns');
 const $socialPicker = document.getElementById('socialPicker');
 
+// img btns
+const $avatarPicker = document.getElementById('avatarPicker');
+const $avatarEdit = document.getElementById('avatarEdit');
+
 // footer btns
 const $settingToggler = document.getElementById('settingToggler');
 const $profileBtn = document.getElementById('profileBtn');
@@ -61,6 +65,19 @@ for (i = 0; i < forms.length; i++) {
     stringEditor(forms[i]);
 }
 
+
+// pickers
+
+// cancel form
+function cancelForm($form){
+    $form.addEventListener('click', (e)=>{
+        if(e.target.dataset.role.includes('cancel')){
+            $form.style.display = 'none';
+            $form.setAttribute('data-status', 'none');
+        }
+    })
+}
+
 // social btn functions
 
 function socialPicker_lunch() {
@@ -77,11 +94,23 @@ function socialPicker_lunch() {
 }
 socialPicker_lunch();
 
-
+function avatorPicker_lunch(){
+    $avatarEdit.addEventListener('click', (e)=>{
+        if ($avatarPicker.dataset.status.includes('none')) {
+            $avatarPicker.style.display = 'flex';
+            $avatarPicker.setAttribute('data-status', 'show');
+        } else if ($avatarPicker.dataset.status.includes('show')) {
+            $avatarPicker.style.display = 'none';
+            $avatarPicker.setAttribute('data-status', 'none');
+        };
+        cancelForm($avatarPicker);
+    })
+}
+avatorPicker_lunch();
 
 // footer setting btns
 function footerSetting() {
-    $settingToggler.addEventListener('click', (event) => {
+    $settingToggler.addEventListener('click', () => {
         if ($settingContent.dataset.status.includes('none')) {
             $settingContent.style.display = 'flex';
             $settingContent.setAttribute('data-status', 'show');
@@ -102,11 +131,6 @@ function bg_color_change() {
         if ($bgColorPicker.dataset.status.includes('none')) {
             $bgColorPicker.style.display = 'flex';
             $bgColorPicker.setAttribute('data-status', 'show');
-            // cancle btn
-            // $bgColorPicker.addEventListener('click', (e) => {
-            //     e.target.style.display = 'none';
-            //     e.target.setAttribute('data-status', 'none');
-            // });
         } else {
             $bgColorPicker.style.display = 'none';
             $bgColorPicker.setAttribute('data-status', 'none');
@@ -119,8 +143,8 @@ function fetchtest() {
     $bookmarkBtn.addEventListener('click', async function () {
         const response = await fetch('http://127.0.0.1:8000/user/get');
         const [userInfo] = await response.json();
-        const [type] = await response.line.json();
-        console.log(type);
+        const test = unserialize(userInfo.companies_array);
+        console.log(test);
     })
 }
 fetchtest();

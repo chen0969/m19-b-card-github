@@ -124,7 +124,7 @@
             </div>
             <div class="c-sections__textarea d-flex flex-column align-items-center justify-content-center mt-3">
                 <h5>公司名稱:</h5>
-                <h4 class="c-sections__companyName fs-2 m-2">{{ Auth::user()->company_name }}</h4>
+                <h4 class="c-sections__companyName fs-2 m-2">{{ Auth::user()->companies_array }}</h4>
                 <h5>公司簡介:</h5>
                 <h4>{{ Auth::user()->company_description }}</h4>
                 <hr class="c-sections__hr">

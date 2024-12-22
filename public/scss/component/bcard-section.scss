@@ -262,3 +262,31 @@
         width: 80%;
     }
 }
+
+.c-imgPicker{
+    top: 0;
+    left: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    padding: var(--spacing-24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #5b5b5b83;
+    z-index: 3;
+
+    &__card{
+        justify-content: center;
+        align-items: center;
+        border-radius: var(--spacing-16);
+        background-color: $light_gray;
+        padding: var(--spacing-12);
+        aspect-ratio: 1/1;
+    }
+
+    &__input{
+        width: 80%;
+        height: var(--spacing-160);
+    }
+}

@@ -164,5 +164,26 @@ class UserController extends Controller
         }
     }
 
+    public function getCompaniesArray()
+    {
+        // Fetch all users and only the companies_array column
+        $users = User::all(['companies_array']);
+
+        // Parse the companies_array column for each user
+        $companies = $users->map(function ($user) {
+            // Convert the JSON-like string to an associative array
+            return json_decode(str_replace("'", '"', $user->companies_array), true);
+        });
+
+        // Extract the value "Blue" or the value at a specific key like "color"
+        $blueValues = $companies->map(function ($array) {
+            return $array ?? null; // Access the color key, or null if it doesn't exist
+        });
+
+        // Debugging: Dump and die to inspect the values
+        dd($blueValues->toArray());
+    }
+
+
     // end of b-card function
 }

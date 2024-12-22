@@ -26,13 +26,13 @@
             <div class="c-banner__header" style="background-image: url('{{asset('uploads/images/default-banner.jpg')}}') ;">
                 <i class="bi bi-house-door c-banner__white"></i>
             </div>
-            <div class="c-banner__footer">
+            <button id="heroBannerEdit" class="c-banner__footer">
                 <i class="bi bi-pencil text-white c-banner__edit"></i>
-            </div>
+            </button>
         </div>
         <!-- profile portrait -->
         <div class="col-12 d-flex flex-column align-items-center justify-content-center">
-            <a href="#" data-toggle="modal" data-target="#edit-avatar">
+            <a id="avatarEdit" href="#" data-toggle="modal" data-target="#edit-avatar">
                 @if(!is_null(Auth::user()->avatar))
                 <img class="c-banner__portrait" src="{{ url('/') . '/uploads/' . Auth::user()->avatar }}" alt="avatar">
                 @else
@@ -66,7 +66,8 @@
                 <i id="bgBtn" class="c-settings__icon p-2 bi bi-back text-center"></i>
             </div>
         </div>
-        <form id="bgColorPicker" style="display: none;" class="container c-bgColorPicker animate__animated animate__slideInUp animate__faster" data-status="none" method="POST" action="{{ route('update-bgColor') }}" enctype="multipart/form-data">
+        <!-- input bg color picker -->
+        <form id="bgColorPicker" style="display: none;" class="container c-bgColorPicker animate__animated animate__slideInUp animate__faster" method="POST" action="{{ route('update-bgColor') }}" enctype="multipart/form-data" data-status="none">
             {{ csrf_field() }}
             <div class="row c-bgColorPicker__card">
                 <label for="bg_color" class="fs-3 text-center">Select your background color</label>
@@ -74,6 +75,25 @@
                 <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="bgColor-edit"></i></button>
             </div>
         </form>
+        <!-- input portrait-->
+        <form id="avatarPicker" style="display: none;" class="c-imgPicker animate__animated animate__slideInUp animate__faster" method="POST" action="{{ route('update-profile') }}" enctype="multipart/form-data" data-status="none">
+            {{ csrf_field() }}
+            <div class="c-imgPicker__card container flex-column">
+                <div class="row">
+                    <h5 class="col-12 text-center">編輯您的頭像</h5>
+                    <input style="display: none;" type="text" value="{{ Auth::user()->id }}" name="uid" readonly>
+                </div>
+                <div class="row align-items-center justify-content-center p-5 g-3">
+                    <input class="col-12" type="file" id="imgInp" name="avatar">
+                    <img class="col-12" id="blah" src="{{ url('/') . '/uploads/' . Auth::user()->avatar }}" alt="your image" />
+                </div>
+                <div class="row justify-content-evenly p-3">
+                    <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
+                    <button class="col-4 btn btn-secondary" type="submit">更新</button>
+                </div>
+            </div>
+        </form>
+        <!-- copy right -->
         <p class="copyright text-center my-auto text-white">
             Copyright &copy; Match19 2024
         </p>
