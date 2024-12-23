@@ -5,12 +5,20 @@ const $bCardsMain = document.getElementById('bCards-main');
 const $bCardsFooter = document.getElementById('bCards-footer')
 
 // socail btns
-const $socialBtns = document.getElementById('socialBtns');
-const $socialPicker = document.getElementById('socialPicker');
+const $socialBtnP = document.getElementById('socialBtns-personal');
+const $socialPickerP = document.getElementById('socialPicker-personal');
+const $socialBtnC = document.getElementById('socialBtn-company');
+const $socialPickerC = document.getElementById('socialPicker-company');
+
+// new company
+const $newCompanyBtn = document.getElementById('newCompanyBtn');
+const $newCompany = document.getElementById('newCompany');
 
 // img btns
 const $avatarPicker = document.getElementById('avatarPicker');
 const $avatarEdit = document.getElementById('avatarEdit');
+const $bannerPicker = document.getElementById('bannerPicker');
+const $bannerEdit = document.getElementById('bannerEdit');
 
 // footer btns
 const $settingToggler = document.getElementById('settingToggler');
@@ -80,22 +88,38 @@ function cancelForm($form){
 
 // social btn functions
 
-function socialPicker_lunch() {
-    $socialBtns.addEventListener('click', (e) => {
+function socialPicker_personal_lunch() {
+    $socialBtnP.addEventListener('click', (e) => {
         if (e.target.classList.contains('bi')) {
             e.preventDefault();
-            $socialPicker.style.display = 'flex';
-            $socialPicker.setAttribute('data-status', 'show');
+            $socialPickerP.style.display = 'flex';
+            $socialPickerP.setAttribute('data-status', 'show');
         } else {
-            $socialPicker.style.display = 'none';
-            $socialPicker.setAttribute('data-status', 'none');
-        }
+            $socialPickerP.style.display = 'none';
+            $socialPickerP.setAttribute('data-status', 'none');
+        };
+        cancelForm($socialPickerP);
     })
 }
-socialPicker_lunch();
+socialPicker_personal_lunch();
+
+function socialPicker_company_lunch() {
+    $socialBtnC.addEventListener('click', (e) => {
+        if (e.target.classList.contains('bi')) {
+            e.preventDefault();
+            $socialPickerC.style.display = 'flex';
+            $socialPickerC.setAttribute('data-status', 'show');
+        } else {
+            $socialPickerC.style.display = 'none';
+            $socialPickerC.setAttribute('data-status', 'none');
+        };
+        cancelForm($socialPickerC);
+    })
+}
+socialPicker_company_lunch();
 
 function avatorPicker_lunch(){
-    $avatarEdit.addEventListener('click', (e)=>{
+    $avatarEdit.addEventListener('click', ()=>{
         if ($avatarPicker.dataset.status.includes('none')) {
             $avatarPicker.style.display = 'flex';
             $avatarPicker.setAttribute('data-status', 'show');
@@ -107,6 +131,34 @@ function avatorPicker_lunch(){
     })
 }
 avatorPicker_lunch();
+
+function bannerPicker_lunch(){
+    $bannerEdit.addEventListener('click', ()=>{
+        if ($bannerPicker.dataset.status.includes('none')) {
+            $bannerPicker.style.display = 'flex';
+            $bannerPicker.setAttribute('data-status', 'show');
+        } else if ($bannerPicker.dataset.status.includes('show')) {
+            $bannerPicker.style.display = 'none';
+            $bannerPicker.setAttribute('data-status', 'none');
+        };
+        cancelForm($bannerPicker);
+    })
+}
+bannerPicker_lunch();
+
+function newCompany_lunch(){
+    $newCompanyBtn.addEventListener('click', ()=>{
+        if ($newCompany.dataset.status.includes('none')) {
+            $newCompany.style.display = 'flex';
+            $newCompany.setAttribute('data-status', 'show');
+        } else if ($newCompany.dataset.status.includes('show')) {
+            $newCompany.style.display = 'none';
+            $newCompany.setAttribute('data-status', 'none');
+        };
+        cancelForm($newCompany);
+    })
+}
+newCompany_lunch();
 
 // footer setting btns
 function footerSetting() {
@@ -134,7 +186,8 @@ function bg_color_change() {
         } else {
             $bgColorPicker.style.display = 'none';
             $bgColorPicker.setAttribute('data-status', 'none');
-        }
+        };
+        cancelForm($bgColorPicker);
     })
 }
 

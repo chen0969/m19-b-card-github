@@ -28,10 +28,24 @@ class UserController extends Controller
             array_push($userSkills, $ele->skill_id);
         }
 
+
+        // array setting
+        // Fetch all users and only the companies_array column
+        $users = User::all(['companies_array']);
+
+        // Parse the companies_array column for each user
+        $companies = $users->map(function ($user) {
+            // Convert the JSON-like string to an associative array
+            return json_decode(str_replace("'", '"', $user->companies_array), true);
+        });
+
+        // Extract the value "Blue" or the value at a specific key like "color"
+        $arrayTest = $companies->map(function ($array) {
+            return $array[1][1] ?? null; // Access the color key, or null if it doesn't exist
+        });
+
         $Data = [
             'skills' => $skills,
-            'profile_video' => Auth::user()->profile_video,
-            'profile_voice' => Auth::user()->profile_voice,
             'universities' => University::all()->transform(function ($item, $key) {
                 return [
                     'value' => $item->id,
@@ -41,7 +55,8 @@ class UserController extends Controller
             'categories' => PostCategory::all(),
             'user_categories' => auth()->user()->postCategory->pluck('post_category_id')->toArray(),
             'user_skills' => $userSkills,
-            'user' => Auth::user()
+            'user' => Auth::user(),
+            'arrayTest' => $arrayTest
         ];
         return view('user.profile')->with('Data', $Data);
     }
@@ -177,7 +192,7 @@ class UserController extends Controller
 
         // Extract the value "Blue" or the value at a specific key like "color"
         $blueValues = $companies->map(function ($array) {
-            return $array ?? null; // Access the color key, or null if it doesn't exist
+            return $array[1][1] ?? null; // Access the color key, or null if it doesn't exist
         });
 
         // Debugging: Dump and die to inspect the values

@@ -76,6 +76,9 @@ Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
     Route::post('/user/profile/update-description', 'UserController@updateDescription')->name('update-description');
     Route::post('/user/profile/update-contact', 'UserController@updateContact')->name('update-contact');
     Route::post('/user/profile/update-bgColor', 'UserController@updateBgColor')->name('update-bgColor');
+    Route::post('/user/profile/update-avatar', 'UserController@updateBgColor')->name('update-avatar');
+    Route::post('/user/profile/update-banner', 'UserController@updateBgColor')->name('update-banner');
+    // test
     Route::get('/user/profile/companies', 'UserController@getCompaniesArray');
 
 

@@ -22,11 +22,11 @@
 <body class="container" style="background-color: {{ Auth::user()->bg_color }}">
     <header id="bCards-header" class="row">
         <!-- hero banner & home btn -->
-        <div class="col-12 pl-5 pr-5">
+        <div class="col-12 p-0">
             <div class="c-banner__header" style="background-image: url('{{asset('uploads/images/default-banner.jpg')}}') ;">
-                <i class="bi bi-house-door c-banner__white"></i>
+                <a href="{{url('/')}}"><i class="bi bi-house-door c-banner__white"></i></a>
             </div>
-            <button id="heroBannerEdit" class="c-banner__footer">
+            <button id="bannerEdit" class="c-banner__footer">
                 <i class="bi bi-pencil text-white c-banner__edit"></i>
             </button>
         </div>
@@ -73,14 +73,36 @@
                 <label for="bg_color" class="fs-3 text-center">Select your background color</label>
                 <input type="color" id="bg-color" class="c-bgColorPicker__input" name="bg_color" value="{{ Auth::User()->bg_color }}">
                 <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="bgColor-edit"></i></button>
+                <div class="row justify-content-evenly p-3">
+                    <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
+                    <button class="col-4 btn btn-secondary" type="submit">更新</button>
+                </div>
             </div>
         </form>
         <!-- input portrait-->
-        <form id="avatarPicker" style="display: none;" class="c-imgPicker animate__animated animate__slideInUp animate__faster" method="POST" action="{{ route('update-profile') }}" enctype="multipart/form-data" data-status="none">
+        <form id="avatarPicker" style="display: none;" class="c-imgPicker animate__animated animate__slideInUp animate__faster" method="POST" action="{{ route('update-avatar') }}" enctype="multipart/form-data" data-status="none">
             {{ csrf_field() }}
             <div class="c-imgPicker__card container flex-column">
                 <div class="row">
                     <h5 class="col-12 text-center">編輯您的頭像</h5>
+                    <input style="display: none;" type="text" value="{{ Auth::user()->id }}" name="uid" readonly>
+                </div>
+                <div class="row align-items-center justify-content-center p-5 g-3">
+                    <input class="col-12" type="file" id="imgInp" name="avatar">
+                    <img class="col-12" id="blah" src="{{ url('/') . '/uploads/' . Auth::user()->avatar }}" alt="your image" />
+                </div>
+                <div class="row justify-content-evenly p-3">
+                    <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
+                    <button class="col-4 btn btn-secondary" type="submit">更新</button>
+                </div>
+            </div>
+        </form>
+        <!-- input banner-->
+        <form id="bannerPicker" style="display: none;" class="c-imgPicker animate__animated animate__slideInUp animate__faster" method="POST" action="{{ route('update-banner') }}" enctype="multipart/form-data" data-status="none">
+            {{ csrf_field() }}
+            <div class="c-imgPicker__card container flex-column">
+                <div class="row">
+                    <h5 class="col-12 text-center">編輯您的背景圖</h5>
                     <input style="display: none;" type="text" value="{{ Auth::user()->id }}" name="uid" readonly>
                 </div>
                 <div class="row align-items-center justify-content-center p-5 g-3">
@@ -100,8 +122,6 @@
     </footer>
     <!-- Bootstrap core JavaScript-->
     <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <!-- TinyMce editor-->
-    <!-- <script src="{{ asset('vendor/laravel-admin-ext/tinymce/tinymce/tinymce.min.js')  }}"></script> -->
     <!-- custome js -->
     <script src="{{ asset('js/b-card.js') }}"></script>
 </body>
