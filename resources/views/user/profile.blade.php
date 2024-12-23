@@ -136,7 +136,7 @@
                 <div class="container">
                     <div class="row g-3 justify-content-around">
                         <button class="col-3">
-                            <i id="socialBtn-company" class="bi bi-plus-circle-dotted c-socialSection__iconDark"></i>
+                            <i class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
                         </button>
                     </div>
                 </div>
@@ -160,7 +160,7 @@
                     <div class="container">
                         <div class="row g-3 justify-content-around">
                             <button class="col-3">
-                                <i id="socialBtn-company" class="bi bi-plus-circle-dotted c-socialSection__iconDark"></i>
+                                <i class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
                             </button>
                         </div>
                     </div>
@@ -215,7 +215,7 @@
             <div class="container">
                 <div class="row g-3 justify-content-around">
                     <button class="col-3">
-                        <i id="socialBtn-company" class="bi bi-plus-circle-dotted c-socialSection__iconDark"></i>
+                        <i class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
                     </button>
                 </div>
             </div>

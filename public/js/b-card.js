@@ -7,7 +7,7 @@ const $bCardsFooter = document.getElementById('bCards-footer')
 // socail btns
 const $socialBtnP = document.getElementById('socialBtns-personal');
 const $socialPickerP = document.getElementById('socialPicker-personal');
-const $socialBtnC = document.getElementById('socialBtn-company');
+const $socialBtnC = document.querySelectorAll('.socialBtns-company');
 const $socialPickerC = document.getElementById('socialPicker-company');
 
 // new company
@@ -104,17 +104,19 @@ function socialPicker_personal_lunch() {
 socialPicker_personal_lunch();
 
 function socialPicker_company_lunch() {
-    $socialBtnC.addEventListener('click', (e) => {
-        if (e.target.classList.contains('bi')) {
-            e.preventDefault();
-            $socialPickerC.style.display = 'flex';
-            $socialPickerC.setAttribute('data-status', 'show');
-        } else {
-            $socialPickerC.style.display = 'none';
-            $socialPickerC.setAttribute('data-status', 'none');
-        };
-        cancelForm($socialPickerC);
-    })
+    $socialBtnC.forEach(button => {
+        button.addEventListener('click', (e) => {
+            if (e.target.classList.contains('bi')) {
+                e.preventDefault();
+                $socialPickerC.style.display = 'flex';
+                $socialPickerC.setAttribute('data-status', 'show');
+            } else {
+                $socialPickerC.style.display = 'none';
+                $socialPickerC.setAttribute('data-status', 'none');
+            }
+            cancelForm($socialPickerC);
+        });
+    });
 }
 socialPicker_company_lunch();
 
