@@ -36,7 +36,7 @@
 
     &__edit {
         padding: var(--spacing-4);
-        border-radius: var(--spacing-80);
+        border-radius: var(--spacing-12);
         background-color: $bg_dark;
         color: $light_gray;
         font-size: var(--text-xl);
@@ -81,7 +81,7 @@
             padding: var(--spacing-8) var(--spacing-32);
             margin-right: calc(-1*(var(--spacing-12)));
             background-color: $light_gray;
-            z-index: 3;
+            z-index: 2;
         }
     }
 
@@ -92,7 +92,7 @@
         padding: var(--spacing-8);
         font-size: var(--text-lg);
         border: var(--spacing-4) solid $light_gray;
-        border-radius: var(--spacing-32);
+        border-radius: var(--spacing-12);
         background-color: $bg_dark;
         margin-left: calc(-1*(var(--spacing-12)));
         color: $light_gray;

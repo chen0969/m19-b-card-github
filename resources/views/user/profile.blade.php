@@ -63,7 +63,7 @@
                 {{ csrf_field() }}
                 <div class="c-sections__tagline">
                     <h5 class="c-sections__title__edit text-center">自我介紹</h5>
-                    <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="description-edit"></i></button>
+                    <button type="submit" class="c-sections__btn__edit"><i class="bi bi-check2-circle" data-section="description-edit"></i></button>
                 </div>
                 <textarea class="c-sections__textarea__edit" rows="13" name="description">{{ Auth::user()->description }}</textarea>
             </form>
@@ -98,7 +98,7 @@
                 {{ csrf_field() }}
                 <div class="c-sections__tagline">
                     <h5 class="c-sections__title__edit text-center">聯絡資訊</h5>
-                    <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="contact-edit"></i></button>
+                    <button type="submit" class="c-sections__btn__edit"><i class="bi bi-check2-circle" data-section="contact-edit"></i></button>
                 </div>
                 <div class="c-sections__textarea__edit d-flex justify-content-center">
                     <ul class="w-75 pt-3">
@@ -148,7 +148,7 @@
                 {{ csrf_field() }}
                 <div class="c-sections__tagline">
                     <h5 class="c-sections__title__edit text-center">營運公司</h5>
-                    <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="company-edit"></i></button>
+                    <button type="submit" class="c-sections__btn__edit"><i class="bi bi-check2-circle" data-section="company-edit"></i></button>
                 </div>
                 <div class="c-sections__textarea__edit d-flex flex-column align-items-center justify-content-center mt-3">
                     <h5>公司名稱:</h5>
@@ -203,7 +203,7 @@
         {{ csrf_field() }}
         <div class="c-sections__tagline">
             <h5 class="c-sections__title__edit text-center">營運公司</h5>
-            <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="company-edit"></i></button>
+            <button type="submit" class="c-sections__btn__edit"><i class="bi bi-check2-circle" data-section="company-edit"></i></button>
         </div>
         <div class="c-sections__textarea__edit d-flex flex-column align-items-center justify-content-center mt-3">
             <h5>公司名稱:</h5>

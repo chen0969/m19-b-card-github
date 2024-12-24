@@ -50,7 +50,7 @@
             <form style="display: none;" id="name-input" class="c-sections__tagline animate__animated animate__bounce" method="POST" action="{{ route('update-name') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <input class="c-sections__title__edit text-center" type="text" name="name" value="{{ Auth::User()->name }}" required>
-                <button type="submit"><i class="bi bi-check2-circle c-sections__btn__edit" data-section="name-edit"></i></button>
+                <button type="submit" class="c-sections__btn__edit"><i class="bi bi-check2-circle" data-section="name-edit"></i></button>
             </form>
         </div>
     </header>

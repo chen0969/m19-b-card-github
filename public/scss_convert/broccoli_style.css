@@ -2118,7 +2118,7 @@ section {
 }
 .c-banner__edit {
   padding: var(--spacing-4);
-  border-radius: var(--spacing-80);
+  border-radius: var(--spacing-12);
   background-color: #222222;
   color: #d7d7d7;
   font-size: var(--text-xl);
@@ -2160,7 +2160,7 @@ section {
   padding: var(--spacing-8) var(--spacing-32);
   margin-right: calc(-1 * (var(--spacing-12)));
   background-color: #d7d7d7;
-  z-index: 3;
+  z-index: 2;
 }
 .c-sections__btn {
   all: unset;
@@ -2169,7 +2169,7 @@ section {
   padding: var(--spacing-8);
   font-size: var(--text-lg);
   border: var(--spacing-4) solid #d7d7d7;
-  border-radius: var(--spacing-32);
+  border-radius: var(--spacing-12);
   background-color: #222222;
   margin-left: calc(-1 * (var(--spacing-12)));
   color: #d7d7d7;
