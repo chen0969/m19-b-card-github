@@ -40,7 +40,7 @@
         background-color: $bg_dark;
         color: $light_gray;
         font-size: var(--text-xl);
-        border: solid var(--spacing-4) $light_gray;
+        border: solid var(--spacing-2) $light_gray;
     }
 }
 
@@ -89,9 +89,9 @@
         all: unset;
         cursor: pointer;
         text-align: center;
-        padding: var(--spacing-8);
+        padding: var(--spacing-16);
         font-size: var(--text-lg);
-        border: var(--spacing-4) solid $light_gray;
+        border: var(--spacing-2) solid $light_gray;
         border-radius: var(--spacing-12);
         background-color: $bg_dark;
         margin-left: calc(-1*(var(--spacing-12)));

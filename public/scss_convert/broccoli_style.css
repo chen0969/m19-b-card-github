@@ -2122,7 +2122,7 @@ section {
   background-color: #222222;
   color: #d7d7d7;
   font-size: var(--text-xl);
-  border: solid var(--spacing-4) #d7d7d7;
+  border: solid var(--spacing-2) #d7d7d7;
 }
 
 .c-sections {
@@ -2166,9 +2166,9 @@ section {
   all: unset;
   cursor: pointer;
   text-align: center;
-  padding: var(--spacing-8);
+  padding: var(--spacing-16);
   font-size: var(--text-lg);
-  border: var(--spacing-4) solid #d7d7d7;
+  border: var(--spacing-2) solid #d7d7d7;
   border-radius: var(--spacing-12);
   background-color: #222222;
   margin-left: calc(-1 * (var(--spacing-12)));

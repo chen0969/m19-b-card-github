@@ -61,7 +61,7 @@
         <div class="c-settings col-12 d-flex flex-column-reverse">
             <i id="settingToggler" class="c-settings__icon p-2 bi bi-gear-fill text-center" data-role="settingToggler"></i>
             <div id="settingContent" class="c-settings__content animate__animated animate__slideInUp animate__faster" style="display: none;" data-status="none">
-                <i id="profileBtn" class="c-settings__icon p-2 bi bi bi-person-fill-gear text-center"></i>
+                <a class="d-flex"  href="{{asset('introduction/1')}}"><i id="profileBtn" class="c-settings__icon p-2 bi bi bi-person-fill-gear text-center"></i></a>
                 <i id="bookmarkBtn" class="c-settings__icon p-2 bi bi-bookmarks-fill text-center"></i>
                 <i id="bgBtn" class="c-settings__icon p-2 bi bi-back text-center"></i>
             </div>

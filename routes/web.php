@@ -20,7 +20,7 @@ Route::get('yizixue-faq', 'YizixueFaqController@index');
 Route::get('/', function () {
     return view('welcome');
 });
-Route::get('introduction/{id}', 'IntroductionController@getDetial')->name('get-introduction');
+
 Route::get('article-list/{user}', 'ArticleController@getAllArticle')->name('article-list');
 Route::get('article/{article}', 'ArticleController@getArticle')->name('article');
 Route::get('study-abroad', 'ArticleController@studyAbroad')->name('study-abroad');
@@ -60,6 +60,8 @@ Route::any('facebook-callback', 'Auth\FacebookController@callback')->name('faceb
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('introduction/{id}', 'IntroductionController@getDetial')->name('get-introduction');
 
 //PostController
 Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
