@@ -6,7 +6,9 @@
 
 <h1>Please directly go to user page</h1>
 
-<button><a href="{{ asset('../user/profile') }}">User Page</a></button>
+<h2>this btn will lead you to introduction page first</h2>
+
+<button><a href="{{ asset('../user/introduction/1') }}">User Page</a></button>
 
 <?php
 // @endsection
