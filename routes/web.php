@@ -71,7 +71,6 @@ Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
     Route::get('/user/skill', 'UserController@getUserBySkill');
     Route::get('/user/profile', 'UserController@profile')->name('profile');
     Route::post('/user/profile/update', 'UserController@update')->name('update-profile');
-    Route::get('/user/profile/companies', 'UserController@getCompaniesArray');
     // the new code｀
     // Route for updating user profile
     Route::post('/user/profile/update-name', 'UserController@updateName')->name('update-name');
@@ -80,8 +79,6 @@ Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
     Route::post('/user/profile/update-bgColor', 'UserController@updateBgColor')->name('update-bgColor');
     Route::post('/user/profile/update-avatar', 'UserController@updateBgColor')->name('update-avatar');
     Route::post('/user/profile/update-banner', 'UserController@updateBgColor')->name('update-banner');
-    // test
-    Route::get('/user/profile/companies', 'UserController@getCompaniesArray');
 
 
     // end of user profile 

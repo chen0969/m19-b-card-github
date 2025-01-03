@@ -28,22 +28,6 @@ class UserController extends Controller
             array_push($userSkills, $ele->skill_id);
         }
 
-
-        // array setting
-        // Fetch all users and only the companies_array column
-        $users = User::all(['companies_array']);
-
-        // Parse the companies_array column for each user
-        $companies = $users->map(function ($user) {
-            // Convert the JSON-like string to an associative array
-            return json_decode(str_replace("'", '"', $user->companies_array), true);
-        });
-
-        // Extract the value "Blue" or the value at a specific key like "color"
-        $arrayTest = $companies->map(function ($array) {
-            return $array[1][1] ?? null; // Access the color key, or null if it doesn't exist
-        });
-
         $Data = [
             'skills' => $skills,
             'universities' => University::all()->transform(function ($item, $key) {
@@ -56,7 +40,6 @@ class UserController extends Controller
             'user_categories' => auth()->user()->postCategory->pluck('post_category_id')->toArray(),
             'user_skills' => $userSkills,
             'user' => Auth::user(),
-            'arrayTest' => $arrayTest
         ];
         return view('user.profile')->with('Data', $Data);
     }
@@ -177,26 +160,6 @@ class UserController extends Controller
             // Handle save failure
             return back()->withErrors(['error' => 'Failed to update bg color.']);
         }
-    }
-
-    public function getCompaniesArray()
-    {
-        // Fetch all users and only the companies_array column
-        $users = User::all(['companies_array']);
-
-        // Parse the companies_array column for each user
-        $companies = $users->map(function ($user) {
-            // Convert the JSON-like string to an associative array
-            return json_decode(str_replace("'", '"', $user->companies_array), true);
-        });
-
-        // Extract the value "Blue" or the value at a specific key like "color"
-        $blueValues = $companies->map(function ($array) {
-            return $array[1][1] ?? null; // Access the color key, or null if it doesn't exist
-        });
-
-        // Debugging: Dump and die to inspect the values
-        dd($blueValues->toArray());
     }
 
 

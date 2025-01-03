@@ -23,9 +23,9 @@ class User extends Authenticatable implements CanVerifyEmailContract
 
     protected $guarded = [];
 
-//    protected $casts = [
-//        'verified' => 'boolean'
-//    ];
+    //    protected $casts = [
+    //        'verified' => 'boolean'
+    //    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -33,7 +33,8 @@ class User extends Authenticatable implements CanVerifyEmailContract
      * @var array
      */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
     ];
 
     public function skills()
@@ -43,7 +44,7 @@ class User extends Authenticatable implements CanVerifyEmailContract
 
     public function post()
     {
-        return $this->hasMany( Post::class, 'uid', 'id');
+        return $this->hasMany(Post::class, 'uid', 'id');
     }
 
     public function postCategory()
@@ -118,5 +119,10 @@ class User extends Authenticatable implements CanVerifyEmailContract
     public function experiences()
     {
         return $this->hasMany(Experience::class);
+    }
+
+    public function companies()
+    {
+        return $this->hasMany(UserCompany::class);
     }
 }

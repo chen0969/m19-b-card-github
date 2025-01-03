@@ -118,6 +118,7 @@
 </div>
 
 <!-- company -->
+@forelse ($Data['user']->companies as $key => $value)
 <div class="row justify-content-center">
     <div class="c-sections col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
         <div id="company-display" class="c-sections p-3 animate__animated animate__fadeIn">
@@ -127,10 +128,9 @@
             </div>
             <div class="c-sections__textarea d-flex flex-column align-items-center justify-content-center mt-3">
                 <h5>公司名稱:</h5>
-                <h4 class="c-sections__companyName fs-2 m-2">Company name here</h4>
+                <h4 class="c-sections__companyName fs-2 m-2">{{$value->company_name}}</h4>
                 <h5>公司簡介:</h5>
-                <h4>Company discription here
-                </h4>
+                <h4>{{$value->company_description}}</h4>
                 <hr class="c-sections__hr">
                 <h5>公司社群:</h5>
                 <div class="container">
@@ -152,9 +152,9 @@
                 </div>
                 <div class="c-sections__textarea__edit d-flex flex-column align-items-center justify-content-center mt-3">
                     <h5>公司名稱:</h5>
-                    <input type="text" value="{{ Auth::user()->company_name }}" name="company_name">
+                    <input type="text" value="{{$value->company_name}}" name="company_name">
                     <h5>公司簡介:</h5>
-                    <input type="text" value="{{ Auth::user()->company_description }}" name="company_description">
+                    <input type="text" value="{{$value->company_description}}" name="company_description">
                     <hr class="c-sections__hr">
                     <h5>公司社群:</h5>
                     <div class="container">
@@ -169,6 +169,8 @@
         </div>
     </div>
 </div>
+@empty
+@endforelse
 
 <!-- scoial picker company -->
 <form id="socialPicker-company" style="display: none;" class="container c-socialBtnPicker animate__animated animate__slideInUp animate__faster" data-status="none" method="POST" action="" enctype="multipart/form-data">
