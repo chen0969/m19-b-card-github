@@ -125,4 +125,10 @@ class User extends Authenticatable implements CanVerifyEmailContract
     {
         return $this->hasMany(UserCompany::class);
     }
+
+
+    public function socialbtns()
+    {
+        return $this->hasMany(UserSocialBtn::class);
+    }
 }

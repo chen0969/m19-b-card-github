@@ -12,11 +12,11 @@ class IntroductionController extends Controller
     {
         $user = User::find($id);
         if(is_null($user)){
-            return back();
+            return redirect()->back();
         }
 
         $Data['user'] = $user;
-        $Data['vip'] = User::where('role', 'vip')->get();
+        // $Data['vip'] = User::where('role', 'vip')->get();
 
         return view('introduciton.index', compact(['Data']));
     }

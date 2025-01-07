@@ -8,7 +8,7 @@
 
 <h2>this btn will lead you to introduction page first</h2>
 
-<button><a href="{{ asset('../user/introduction/1') }}">User Page</a></button>
+<button><a href="{{ asset('../introduction/1') }}">User Page</a></button>
 
 <?php
 // @endsection

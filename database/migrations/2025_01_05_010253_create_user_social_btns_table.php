@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserCompaniesTable extends Migration
+class CreateUserSocialBtnsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,9 @@ class CreateUserCompaniesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_companies', function (Blueprint $table) {
+        Schema::create('user_social_btns', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('user_id');
-            $table->string('company_name')->nullable();
-            $table->string('company_description')->nullable();
             $table->text('facebook')->nullable();
             $table->text('instagram')->nullable();
             $table->text('line')->nullable();
@@ -30,7 +28,6 @@ class CreateUserCompaniesTable extends Migration
             $table->text('wechat')->nullable();
             $table->text('whatsapp')->nullable();
             $table->text('other')->nullable();
-
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
@@ -42,6 +39,6 @@ class CreateUserCompaniesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_companies');
+        Schema::dropIfExists('user_social_btns');
     }
 }

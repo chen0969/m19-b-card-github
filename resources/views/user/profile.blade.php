@@ -5,12 +5,14 @@
 <div id="socialBtns-personal" class="row justify-content-center">
     <div class="col-md-12 w-75 pt-3">
         <div class="row g-2 justify-content-around">
-            <button class="col-3">
-                <a href="{{ Auth::user()->line }}"><i class="bi bi-line c-socialSection__icon text-white" data-btn_status="show"></i></a>
-            </button>
-            <button class="col-3">
-                <a href="{{ Auth::user()->fb }}"><i class="bi bi-facebook c-socialSection__icon text-white" data-btn_status="show"></i></a>
-            </button>
+            @forelse ($Data['user']->socialbtns as $key => $value)
+            @foreach ($value->getAttributes() as $column => $columnValue)
+            @if (!in_array($column, ['id', 'user_id']))
+            {!! $columnValue !!}
+            @endif
+            @endforeach
+            @empty
+            @endforelse
             <button class="col-3">
                 <a href="#"><i class="bi bi-plus-circle-dotted c-socialSection__icon text-white" data-btn_status="show"></i></a>
             </button>
@@ -135,6 +137,11 @@
                 <h5>公司社群:</h5>
                 <div class="container">
                     <div class="row g-3 justify-content-around">
+                        @foreach ($value->getAttributes() as $column => $columnValue)
+                        @if (!in_array($column, ['id', 'user_id', 'company_name', 'company_description']))
+                        {!! $columnValue !!}
+                        @endif
+                        @endforeach
                         <button class="col-3">
                             <i class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
                         </button>
