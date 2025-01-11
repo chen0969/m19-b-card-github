@@ -28,6 +28,8 @@ class CreateUserSocialBtnsTable extends Migration
             $table->text('wechat')->nullable();
             $table->text('whatsapp')->nullable();
             $table->text('other')->nullable();
+            $table->timestamps();
+
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }

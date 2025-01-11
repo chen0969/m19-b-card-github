@@ -2321,9 +2321,6 @@ section {
   padding: var(--spacing-12);
   aspect-ratio: 1/1;
 }
-.c-socialBtnPicker__input {
-  width: 80%;
-}
 
 .c-imgPicker {
   top: 0;

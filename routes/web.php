@@ -80,6 +80,10 @@ Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
     Route::post('/user/profile/update-avatar', 'UserController@updateBgColor')->name('update-avatar');
     Route::post('/user/profile/update-banner', 'UserController@updateBgColor')->name('update-banner');
 
+    Route::post('/user/profile/add-company', 'UserController@addCompany')->name('add-company');
+    Route::post('/user/profile/update-company', 'UserController@updateCompany')->name('update-company');
+    Route::post('/user/profile/update-social-btn', 'UserController@updateSocialBtn')->name('update-social-btn');
+
 
     // end of user profile 
 

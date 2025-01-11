@@ -7,7 +7,7 @@
         <div class="row g-2 justify-content-around">
             @forelse ($Data['user']->socialbtns as $key => $value)
             @foreach ($value->getAttributes() as $column => $columnValue)
-            @if (!in_array($column, ['id', 'user_id']))
+            @if (!in_array($column, ['id', 'user_id', 'created_at', 'updated_at']))
             {!! $columnValue !!}
             @endif
             @endforeach
@@ -21,25 +21,33 @@
 </div>
 
 <!-- scoial picker personal -->
-<form id="socialPicker-personal" style="display: none;" class="container c-socialBtnPicker animate__animated animate__slideInUp animate__faster" data-status="none" method="POST" action="" enctype="multipart/form-data">
+<form id="socialPicker-personal" style="display: none;" class="container c-socialBtnPicker animate__animated animate__slideInUp animate__faster" data-status="none" method="POST" action="{{ route('update-social-btn') }}" enctype="multipart/form-data">
     {{ csrf_field() }}
-    <div class="row c-socialBtnPicker__card">
+    <div class="row c-socialBtnPicker__card overflow-scroll h-75">
         <label for="bg_color" class="col-12 fs-3 text-center">Arrange your social media accounts</label>
-        <div class="row">
-            <i class="col bi bi-line c-socialSection__icon" data-btn_status="pick"></i>
-            <i class="col bi bi-facebook c-socialSection__icon" data-btn_status="pick"></i>
-            <i class="col bi bi-instagram c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-twitter-x c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-linkedin c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-discord c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-pinterest c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-threads-fill c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-tiktok c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-youtube c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-wechat c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-whatsapp c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
+        <div class="row gy-3">
+            @forelse ($Data['user']->socialbtns as $key => $value)
+            @foreach ($value->getAttributes() as $column => $columnValue)
+            @if (!in_array($column, ['id', 'user_id', 'other', 'created_at', 'updated_at']))
+            @php
+            preg_match('/href=["\']?([^"\'>]+)["\']?/', $columnValue, $matches);
+            $href = $matches[1] ?? null;
+            @endphp
+            <i class="col-2 bi bi-{{ $column }} c-socialSection__icon"></i>
+            <input type="text" class="col-10 c-socialBtnPicker__input" name="{{ $column }}" value="{{ $href }}">
+            @elseif($column == 'other')
+            @php
+            preg_match('/href=["\']?([^"\'>]+)["\']?/', $columnValue, $matches);
+            $href = $matches[1] ?? null;
+            @endphp
+            <i class="col-2 bi bi-wordpress c-socialSection__icon"></i>
+            <input type="text" class="col-10 c-socialBtnPicker__input" name="{{ $column }}" value="{{ $href }}">
+            @endif
+            @endforeach
+            @empty
+            <p>empty</p>
+            @endforelse
         </div>
-        <input type="text" id="bg-color" class="col-12 c-socialBtnPicker__input" name="bg_color" value="test">
         <div class="row justify-content-evenly p-3">
             <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
             <button class="col-4 btn btn-secondary" type="submit">更新</button>
@@ -138,7 +146,7 @@
                 <div class="container">
                     <div class="row g-3 justify-content-around">
                         @foreach ($value->getAttributes() as $column => $columnValue)
-                        @if (!in_array($column, ['id', 'user_id', 'company_name', 'company_description']))
+                        @if (!in_array($column, ['id', 'user_id', 'company_name', 'company_description', 'created_at', 'updated_at']))
                         {!! $columnValue !!}
                         @endif
                         @endforeach
@@ -151,7 +159,7 @@
         </div>
         <!-- input -->
         <div id="company-input" class="c-sections p-3 animate__animated animate__bounce" style="display: none;">
-            <form class="c-sections" method="POST" action="{{ route('update-name') }}" enctype="multipart/form-data">
+            <form class="c-sections" method="POST" action="{{ route('update-company') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
                 <div class="c-sections__tagline">
                     <h5 class="c-sections__title__edit text-center">營運公司</h5>
@@ -163,14 +171,6 @@
                     <h5>公司簡介:</h5>
                     <input type="text" value="{{$value->company_description}}" name="company_description">
                     <hr class="c-sections__hr">
-                    <h5>公司社群:</h5>
-                    <div class="container">
-                        <div class="row g-3 justify-content-around">
-                            <button class="col-3">
-                                <i class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </form>
         </div>
@@ -208,17 +208,21 @@
 
 <!-- add company -->
 <div id="newCompany" class="c-sections p-3 animate__animated animate__bounce" style="display: none;" data-status="none">
-    <form class="c-sections" method="POST" action="{{ route('update-name') }}" enctype="multipart/form-data">
+    <form class="c-sections" method="POST" action="{{ route('add-company') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
+        <!-- connect the user -->
+        <div class="mb-3" style="display:none">
+            <input type="text" value="{{ Auth::user()->id }}" name="uid" class="form-control" readonly>
+        </div>
         <div class="c-sections__tagline">
             <h5 class="c-sections__title__edit text-center">營運公司</h5>
             <button type="submit" class="c-sections__btn__edit"><i class="bi bi-check2-circle" data-section="company-edit"></i></button>
         </div>
         <div class="c-sections__textarea__edit d-flex flex-column align-items-center justify-content-center mt-3">
             <h5>公司名稱:</h5>
-            <input type="text" value="{{ Auth::user()->company_name }}" name="company_name">
+            <input type="text" value="{{ old('company_name') }}" name="company_name">
             <h5>公司簡介:</h5>
-            <input type="text" value="{{ Auth::user()->company_description }}" name="company_description">
+            <input type="text" value="{{ old('company_description') }}" name="company_description">
             <hr class="c-sections__hr">
             <h5>公司社群:</h5>
             <div class="container">

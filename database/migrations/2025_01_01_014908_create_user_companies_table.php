@@ -17,7 +17,7 @@ class CreateUserCompaniesTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('user_id');
             $table->string('company_name')->nullable();
-            $table->string('company_description')->nullable();
+            $table->text('company_description')->nullable();
             $table->text('facebook')->nullable();
             $table->text('instagram')->nullable();
             $table->text('line')->nullable();
@@ -30,6 +30,8 @@ class CreateUserCompaniesTable extends Migration
             $table->text('wechat')->nullable();
             $table->text('whatsapp')->nullable();
             $table->text('other')->nullable();
+            $table->timestamps();
+
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });

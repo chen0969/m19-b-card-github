@@ -90,14 +90,11 @@ function cancelForm($form){
 
 function socialPicker_personal_lunch() {
     $socialBtnP.addEventListener('click', (e) => {
-        if (e.target.classList.contains('bi')) {
+        if (e.target.classList.contains('bi-plus-circle-dotted')) {
             e.preventDefault();
             $socialPickerP.style.display = 'flex';
             $socialPickerP.setAttribute('data-status', 'show');
-        } else {
-            $socialPickerP.style.display = 'none';
-            $socialPickerP.setAttribute('data-status', 'none');
-        };
+        }
         cancelForm($socialPickerP);
     })
 }
