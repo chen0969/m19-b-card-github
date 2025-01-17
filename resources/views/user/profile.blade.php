@@ -131,10 +131,10 @@
 @forelse ($Data['user']->companies as $key => $value)
 <div class="row justify-content-center">
     <div class="c-sections col-12 mt-3 d-flex flex-column align-items-center justify-content-center">
-        <div id="company-display" class="c-sections p-3 animate__animated animate__fadeIn">
+        <div id="company-show-{{$value->id}}" class="c-sections p-3 animate__animated animate__fadeIn" data-status="show">
             <div class="c-sections__tagline">
                 <h5 class="c-sections__title text-center">營運公司</h5>
-                <i class="bi bi-pencil c-sections__btn" data-section="company"></i>
+                <i onclick="cInfoLuncher('{{ $value->id }}')" class="bi bi-pencil c-sections__btn" data-section="company"></i>
             </div>
             <div class="c-sections__textarea d-flex flex-column align-items-center justify-content-center mt-3">
                 <h5>公司名稱:</h5>
@@ -142,8 +142,11 @@
                 <h5>公司簡介:</h5>
                 <h4>{{$value->company_description}}</h4>
                 <hr class="c-sections__hr">
-                <h5>公司社群:</h5>
-                <div class="container">
+                <!-- company social media show -->
+                <div id="company-social-show-{{$value->id}}" class="container" style="display: block;" data-status="show">
+                    <div class="row">
+                        <h5 class="col-12 text-center">公司社群:</h5>
+                    </div>
                     <div class="row g-3 justify-content-around">
                         @foreach ($value->getAttributes() as $column => $columnValue)
                         @if (!in_array($column, ['id', 'user_id', 'company_name', 'company_description', 'created_at', 'updated_at']))
@@ -151,16 +154,45 @@
                         @endif
                         @endforeach
                         <button class="col-3">
-                            <i class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
+                            <i onclick="cSLuncher('{{ $value->id }}')" class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
                         </button>
                     </div>
                 </div>
+                <!-- social picker -->
+                <form id="company-social-form-{{$value->id}}" style="display: none;" class="container flex-column animate__animated animate__slideInUp" data-status="none" method="POST" action="{{ route('update-company-social') }}" enctype="multipart/form-data">
+                    <div class="row g-2">
+                        {{ csrf_field() }}
+                        <input type="hidden" name="id" value="{{ $value->id }}">
+                        @foreach ($value->getAttributes() as $column => $columnValue)
+                        @if (!in_array($column, ['id', 'user_id', 'company_name', 'company_description', 'other', 'created_at', 'updated_at']))
+                        @php
+                        preg_match('/href=["\']?([^"\'>]+)["\']?/', $columnValue, $matches);
+                        $href = $matches[1] ?? null;
+                        @endphp
+                        <i class="col-2 bi bi-{{ $column }} c-socialSection__icon"></i>
+                        <input type="text" class="col-10 c-socialBtnPicker__input" name="{{ $column }}" value="{{ $href }}">
+                        @elseif($column == 'other')
+                        @php
+                        preg_match('/href=["\']?([^"\'>]+)["\']?/', $columnValue, $matches);
+                        $href = $matches[1] ?? null;
+                        @endphp
+                        <i class="col-2 bi bi-wordpress c-socialSection__icon"></i>
+                        <input type="text" class="col-10 c-socialBtnPicker__input" name="{{ $column }}" value="{{ $href }}">
+                        @endif
+                        @endforeach
+                    </div>
+                    <div class="row pt-5 justify-content-evenly">
+                        <button class="col-5 btn btn-secondary" type="button" data-role="cancel">關閉</button>
+                        <button class="col-5 btn btn-secondary" type="submit">更新</button>
+                    </div>
+                </form>
             </div>
         </div>
-        <!-- input -->
-        <div id="company-input" class="c-sections p-3 animate__animated animate__bounce" style="display: none;">
+        <!-- company input -->
+        <div id="company-input-{{$value->id}}" class="c-sections p-3 animate__animated animate__bounce" style="display: none;" data-status="none">
             <form class="c-sections" method="POST" action="{{ route('update-company') }}" enctype="multipart/form-data">
                 {{ csrf_field() }}
+                <input type="hidden" name="id" value="{{ $value->id }}">
                 <div class="c-sections__tagline">
                     <h5 class="c-sections__title__edit text-center">營運公司</h5>
                     <button type="submit" class="c-sections__btn__edit"><i class="bi bi-check2-circle" data-section="company-edit"></i></button>
@@ -178,33 +210,6 @@
 </div>
 @empty
 @endforelse
-
-<!-- scoial picker company -->
-<form id="socialPicker-company" style="display: none;" class="container c-socialBtnPicker animate__animated animate__slideInUp animate__faster" data-status="none" method="POST" action="" enctype="multipart/form-data">
-    {{ csrf_field() }}
-    <div class="row c-socialBtnPicker__card">
-        <label for="bg_color" class="col-12 fs-3 text-center">Arrange your social media accounts</label>
-        <div class="row">
-            <i class="col bi bi-line c-socialSection__icon" data-btn_status="pick"></i>
-            <i class="col bi bi-facebook c-socialSection__icon" data-btn_status="pick"></i>
-            <i class="col bi bi-instagram c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-twitter-x c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-linkedin c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-discord c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-pinterest c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-threads-fill c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-tiktok c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-youtube c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-wechat c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-            <i class="col bi bi-whatsapp c-socialSection__icon c-socialSection__icon__hide" data-btn_status="hide"></i>
-        </div>
-        <input type="text" id="bg-color" class="col-12 c-socialBtnPicker__input" name="bg_color" value="test">
-        <div class="row justify-content-evenly p-3">
-            <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
-            <button class="col-4 btn btn-secondary" type="submit">更新</button>
-        </div>
-    </div>
-</form>
 
 <!-- add company -->
 <div id="newCompany" class="c-sections p-3 animate__animated animate__bounce" style="display: none;" data-status="none">
@@ -224,14 +229,6 @@
             <h5>公司簡介:</h5>
             <input type="text" value="{{ old('company_description') }}" name="company_description">
             <hr class="c-sections__hr">
-            <h5>公司社群:</h5>
-            <div class="container">
-                <div class="row g-3 justify-content-around">
-                    <button class="col-3">
-                        <i class="bi bi-plus-circle-dotted c-socialSection__iconDark socialBtns-company"></i>
-                    </button>
-                </div>
-            </div>
             <div class="container">
                 <div class="row justify-content-evenly p-3">
                     <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
@@ -242,7 +239,7 @@
     </form>
 </div>
 
-<!-- add section -->
+<!-- add section btn-->
 <div class="row justify-content-center">
     <div class="col-12 mt-3 p-3 animate__animated animate__fadeIn d-flex flex-column align-items-center justify-content-center">
         <div class="c-addSection">
@@ -253,4 +250,40 @@
         </div>
     </div>
 </div>
+
+
+<!-- company js function -->
+<script>
+    const cSLuncher = (csfNumber) => {
+        const cSShow = document.getElementById(`company-social-show-${csfNumber}`);
+        const cSForm = document.getElementById(`company-social-form-${csfNumber}`);
+        if (cSForm.dataset.status.includes('none') && cSShow.dataset.status.includes('show')) {
+            cSForm.style.display = 'flex';
+            cSForm.setAttribute('data-status', 'show');
+            cSShow.style.display = 'none';
+            cSShow.setAttribute('data-status', 'none');
+            const cancelForm_company = ($form) => {
+                $form.addEventListener('click', (e) => {
+                    if (e.target.dataset.role.includes('cancel')) {
+                        cSForm.style.display = 'none';
+                        cSForm.setAttribute('data-status', 'none');
+                        cSShow.style.display = 'block';
+                        cSShow.setAttribute('data-status', 'show');
+                    }
+                })
+            }
+            cancelForm_company(cSForm);
+        }
+    };
+    const cInfoLuncher = (csfNumber) => {
+        const cInfoShow = document.getElementById(`company-show-${csfNumber}`);
+        const cInfoForm = document.getElementById(`company-input-${csfNumber}`);
+        if (cInfoForm.dataset.status.includes('none') && cInfoShow.dataset.status.includes('show')) {
+            cInfoForm.style.display = 'flex';
+            cInfoForm.setAttribute('data-status', 'show');
+            cInfoShow.style.display = 'none';
+            cInfoShow.setAttribute('data-status', 'none');
+        }
+    };
+</script>
 @endsection

@@ -82,6 +82,7 @@ Route::group(['middleware' => ['auth', 'isEmailVerified']], function () {
 
     Route::post('/user/profile/add-company', 'UserController@addCompany')->name('add-company');
     Route::post('/user/profile/update-company', 'UserController@updateCompany')->name('update-company');
+    Route::post('/user/profile/update-company-social', 'UserController@updateCompanySocial')->name('update-company-social');
     Route::post('/user/profile/update-social-btn', 'UserController@updateSocialBtn')->name('update-social-btn');
 
 

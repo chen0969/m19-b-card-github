@@ -27,7 +27,7 @@ const $bookmarkBtn = document.getElementById('bookmarkBtn');
 const $settingContent = document.getElementById('settingContent');
 
 // array
-const forms = ['name', 'description', 'contact', 'company']
+const forms = ['name', 'description', 'contact']
 
 // main functions
 
@@ -115,7 +115,7 @@ function socialPicker_company_lunch() {
         });
     });
 }
-socialPicker_company_lunch();
+// socialPicker_company_lunch();
 
 function avatorPicker_lunch(){
     $avatarEdit.addEventListener('click', ()=>{

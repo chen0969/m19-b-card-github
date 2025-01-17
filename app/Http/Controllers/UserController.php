@@ -189,6 +189,7 @@ class UserController extends Controller
     public function updateCompany(Request $req)
     {
         $req->validate([
+            'id' => 'required|exists:user_companies,id',
             'company_name' => 'string|max:255|nullable',
             'company_description' => 'string|max:255|nullable',
         ]);
@@ -198,7 +199,7 @@ class UserController extends Controller
             return back()->withErrors(['error' => 'User not found.']);
         }
 
-        $company = UserCompany::where('user_id', $User->id)->first();
+        $company = UserCompany::where('user_id', $User->id)->where('id', $req->id)->first();
 
         if (!$company) {
             return back()->withErrors(['error' => 'Company record not found.']);
@@ -213,6 +214,58 @@ class UserController extends Controller
             return back()->withErrors(['error' => 'Failed to update the company record.']);
         }
     }
+
+    public function updateCompanySocial(Request $req)
+    {
+        $req->validate([
+            'id' => 'required|exists:user_companies,id',
+            'facebook' => 'max:1200|nullable',
+            'instagram' => 'max:1200|nullable',
+            'line' => 'max:1200|nullable',
+            'twitter' => 'max:1200|nullable',
+            'linkedin' => 'max:1200|nullable',
+            'discord' => 'max:1200|nullable',
+            'pinterest' => 'max:1200|nullable',
+            'threads' => 'max:1200|nullable',
+            'tiktok' => 'max:1200|nullable',
+            'youtube' => 'max:1200|nullable',
+            'wechat' => 'max:1200|nullable',
+            'whatsapp' => 'max:1200|nullable',
+            'other' => 'max:1200|nullable'
+        ]);
+    
+        $User = Auth::user();
+        if (!$User) {
+            return back()->withErrors(['error' => 'User not found.']);
+        }
+
+        $company = UserCompany::where('user_id', $User->id)->where('id', $req->id)->first();
+        if (!$company) {
+            return back()->withErrors(['error' => 'Company record not found.']);
+        }
+    
+        $fields = $req->only([
+            'facebook', 'instagram', 'line', 'twitter', 'linkedin', 
+            'discord', 'pinterest', 'tiktok', 'youtube', 
+            'wechat', 'whatsapp', 'other'
+        ]);
+    
+        foreach ($fields as $field => $value) {
+            if ($req->has($field) && $req->$field !== null) {
+                $company->$field = '<button class="col-3"><a target="_blank" href="' . $req->$field . '"><i class="bi bi-' . $field . ' c-socialSection__icon" data-btn_status="show"></i></a></button>';
+            } else {
+                $company->$field = null; // Explicitly set to null if input is null
+            }
+        }
+
+
+        if ($company->save()) {
+            return back()->with('success', 'Company record updated successfully.');
+        } else {
+            return back()->withErrors(['error' => 'Failed to update the company record.']);
+        }
+    }
+
 
 
     public function updateSocialBtn(Request $req)
