@@ -233,7 +233,7 @@ class UserController extends Controller
             'whatsapp' => 'max:1200|nullable',
             'other' => 'max:1200|nullable'
         ]);
-    
+
         $User = Auth::user();
         if (!$User) {
             return back()->withErrors(['error' => 'User not found.']);
@@ -243,13 +243,22 @@ class UserController extends Controller
         if (!$company) {
             return back()->withErrors(['error' => 'Company record not found.']);
         }
-    
+
         $fields = $req->only([
-            'facebook', 'instagram', 'line', 'twitter', 'linkedin', 
-            'discord', 'pinterest', 'tiktok', 'youtube', 
-            'wechat', 'whatsapp', 'other'
+            'facebook',
+            'instagram',
+            'line',
+            'twitter',
+            'linkedin',
+            'discord',
+            'pinterest',
+            'tiktok',
+            'youtube',
+            'wechat',
+            'whatsapp',
+            'other'
         ]);
-    
+
         foreach ($fields as $field => $value) {
             if ($req->has($field) && $req->$field !== null) {
                 $company->$field = '<button class="col-3"><a target="_blank" href="' . $req->$field . '"><i class="bi bi-' . $field . ' c-socialSection__icon" data-btn_status="show"></i></a></button>';
@@ -265,8 +274,6 @@ class UserController extends Controller
             return back()->withErrors(['error' => 'Failed to update the company record.']);
         }
     }
-
-
 
     public function updateSocialBtn(Request $req)
     {
@@ -289,18 +296,27 @@ class UserController extends Controller
         $User = Auth::user();
 
         $fields = [
-            'facebook', 'instagram', 'line', 'twitter', 'linkedin', 
-            'discord', 'pinterest', 'tiktok', 'youtube', 
-            'wechat', 'whatsapp', 'other'
+            'facebook',
+            'instagram',
+            'line',
+            'twitter',
+            'linkedin',
+            'discord',
+            'pinterest',
+            'tiktok',
+            'youtube',
+            'wechat',
+            'whatsapp',
+            'other'
         ];
-    
+
         $btn = UserSocialBtn::where('user_id', $User->id)->first();
-    
+
         for ($i = 0; $i < count($fields); $i++) {
             $field = $fields[$i]; // Get the current field name
             if ($req->has($field) && $req->$field !== null) {
                 $btn->$field = '<button class="col-3"><a target="_blank" href="' . $req->$field . '"><i class="bi bi-' . $field . ' c-socialSection__icon text-white" data-btn_status="show"></i></a></button>';
-            }else {
+            } else {
                 $btn->$field = null; // Explicitly set to null if input is null
             }
         }
@@ -309,6 +325,70 @@ class UserController extends Controller
             return back()->with('success', 'Company record updated successfully.');
         } else {
             return back()->withErrors(['error' => 'Failed to update the company record.']);
+        }
+    }
+
+    public function updateBanner(Request $req)
+    {
+        $req->validate(
+            ['bannerImg' => 'nullable|mimes:jpeg,jpg,bmp,png|max:10240'],
+            [
+                'bannerImg.mimes' => '圖片格式不正確，請使用 jpeg、jpg、bmp 或 png 檔案。',
+                'bannerImg.max' => '圖片大小不得超過 10 MB。',
+            ]
+        );
+
+        $User = Auth::user();
+        if (!$User) {
+            return back()->withErrors(['error' => 'User not found.']);
+        }
+
+        if($req->file('bannerImg')) {
+            $file = $req->file('bannerImg');
+            $fileName = time().'-'.$file->getClientOriginalName();
+            $file->storeAs('banner', $fileName, 'public');
+
+            $User->bannerImg = 'banner/'.$fileName;
+        }
+
+        if ($User->save()) {
+            // Return back with a success message
+            return back()->with('success', '資料更新成功。');
+        } else {
+            // Handle save failure
+            return back()->withErrors(['error' => '圖片更新失敗，請稍後再試。']);
+        }
+    }
+
+    public function updateAvatar(Request $req)
+    {
+        $req->validate(
+            ['avatar' => 'nullable|mimes:jpeg,jpg,bmp,png|max:10240'],
+            [
+                'avatar.mimes' => '圖片格式不正確，請使用 jpeg、jpg、bmp 或 png 檔案。',
+                'avatar.max' => '圖片大小不得超過 10 MB。',
+            ]
+        );
+
+        $User = Auth::user();
+        if (!$User) {
+            return back()->withErrors(['error' => 'User not found.']);
+        }
+
+        if($req->file('avatar')) {
+            $file = $req->file('avatar');
+            $fileName = time().'-'.$file->getClientOriginalName();
+            $file->storeAs('avatar', $fileName, 'public');
+
+            $User->avatar = 'avatar/'.$fileName;
+        }
+
+        if ($User->save()) {
+            // Return back with a success message
+            return back()->with('success', '資料更新成功。');
+        } else {
+            // Handle save failure
+            return back()->withErrors(['error' => '圖片更新失敗，請稍後再試。']);
         }
     }
     // end of b-card function

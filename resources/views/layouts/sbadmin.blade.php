@@ -23,18 +23,18 @@
     <header id="bCards-header" class="row">
         <!-- hero banner & home btn -->
         <div class="col-12 p-0">
-            <div class="c-banner__header" style="background-image: url('{{asset('uploads/images/default-banner.jpg')}}') ;">
+            <div class="c-banner__header" style="background-image: url('{{ url('/') . '/storage/' . Auth::user()->bannerImg }}') ;">
                 <a href="{{url('/')}}"><i class="bi bi-house-door c-banner__white"></i></a>
             </div>
             <button id="bannerEdit" class="c-banner__footer">
                 <i class="bi bi-pencil text-white c-banner__edit"></i>
             </button>
         </div>
-        <!-- profile portrait -->
+        <!-- profile avatar portrait -->
         <div class="col-12 d-flex flex-column align-items-center justify-content-center">
             <a id="avatarEdit" href="#" data-toggle="modal" data-target="#edit-avatar">
                 @if(!is_null(Auth::user()->avatar))
-                <img class="c-banner__portrait" src="{{ url('/') . '/uploads/' . Auth::user()->avatar }}" alt="avatar">
+                <img class="c-banner__portrait" src="{{ url('/') . '/storage/' . Auth::user()->avatar }}" alt="avatar">
                 @else
                 <img class="c-banner__portrait" src="{{ url('/') . '/uploads/images/portrait.png'}}" alt="avatar">
                 @endif
@@ -89,7 +89,7 @@
                 </div>
                 <div class="row align-items-center justify-content-center p-5 g-3">
                     <input class="col-12" type="file" id="imgInp" name="avatar">
-                    <img class="col-12" id="blah" src="{{ url('/') . '/uploads/' . Auth::user()->avatar }}" alt="your image" />
+                    <img class="col-12" id="blah" src="{{ url('/') . '/storage/' . Auth::user()->avatar }}" alt="your image" />
                 </div>
                 <div class="row justify-content-evenly p-3">
                     <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
@@ -106,8 +106,8 @@
                     <input style="display: none;" type="text" value="{{ Auth::user()->id }}" name="uid" readonly>
                 </div>
                 <div class="row align-items-center justify-content-center p-5 g-3">
-                    <input class="col-12" type="file" id="imgInp" name="avatar">
-                    <img class="col-12" id="blah" src="{{ url('/') . '/uploads/' . Auth::user()->avatar }}" alt="your image" />
+                    <input class="col-12" type="file" id="imgInp" name="bannerImg">
+                    <img class="col-12" id="blah" src="{{ url('/') . '/storage/' . Auth::user()->bannerImg }}" alt="your image" />
                 </div>
                 <div class="row justify-content-evenly p-3">
                     <button class="col-4 btn btn-secondary" type="button" data-role="cancel">關閉</button>
